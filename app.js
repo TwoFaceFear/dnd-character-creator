@@ -47,8 +47,12 @@ Character.prototype.setCharisma = function() {
 
 function main() {
 
+  //if(location.pathname.endsWith('create.html')) {
   var submit = document.getElementById('submit');
-  submit.addEventListener('click', handleSubmitClick);
+  if(submit) {
+    submit.addEventListener('click', handleSubmitClick);
+  }
+  //}
 }
 
 function handleSubmitClick() {
@@ -56,8 +60,8 @@ function handleSubmitClick() {
 
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
 
-  //document.location.href = 'display.html';
-  //renderCharacter();
+  document.location.href = 'display.html';
+  renderCharacter(character.name);
 }
 
 function rollDice() {
@@ -84,7 +88,6 @@ function generateCharacter() {
   character.setIntelligence();
   character.setConstitution();
 
-  myCharacters.push(character);
   return character;
 }
 
@@ -112,8 +115,16 @@ function getAlignment(){
   return getAlignment;
 }
 
-function renderCharacter(char) {
+function renderCharacter(name) {
   var el;
+  var char;
+  var chars = JSON.parse(localStorage.getItem(myCharacters));
+
+  for (var i = 0; i < myCharacters.length; i++) {
+    if (myCharacters[i].name == name) {
+      char = chars[i];
+    }
+  }
 
   el = document.getElementById('display-name-h1');
   el.textContent = char.name;
