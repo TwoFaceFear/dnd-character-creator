@@ -24,19 +24,19 @@ Character.prototype.setDexterity = function() {
 }
 
 Character.prototype.setConstitution = function() {
-  this.constitution = rollDice;
+  this.constitution = rollDice();
 }
 
 Character.prototype.setIntelligence = function() {
-  this.intelligence = rollDice;
+  this.intelligence = rollDice();
 }
 
 Character.prototype.setWisdom = function() {
-  this.wisdom = rollDice;
+  this.wisdom = rollDice();
 }
 
 Character.prototype.setCharisma = function() {
-  this.charisma = rollDice;
+  this.charisma = rollDice();
 }
 
 function rollDice() {
