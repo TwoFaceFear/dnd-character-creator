@@ -45,20 +45,16 @@ Character.prototype.setCharisma = function() {
   this.charisma = rollDice();
 };
 
-var url = window.location.href ;
-var array = url.split('/');
-
-var lastsegment = array[array.length-1];
-
-
-if (lastsegment === 'create.html?'){
   main();
-}
 
 function main() {
 
+  //if(location.pathname.endsWith('create.html')) {
   var submit = document.getElementById('submit');
-  submit.addEventListener('click', handleSubmitClick);
+  if(submit) {
+    submit.addEventListener('click', handleSubmitClick);
+  }
+  //}
 }
 
 function handleSubmitClick() {
@@ -67,8 +63,6 @@ function handleSubmitClick() {
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
 
   document.location.href = 'display.html';
-  var lastIndex = myCharacters.length -1;
-  renderCharacter(myCharacters[lastIndex]);
 }
 
 function rollDice() {
@@ -95,7 +89,6 @@ function generateCharacter() {
   character.setIntelligence();
   character.setConstitution();
 
-  myCharacters.push(character);
   return character;
 }
 
@@ -121,46 +114,6 @@ function getAlignment(){
   var a = document.getElementById('alignment');
   var getAlignment = a.options[a.selectedIndex].value;
   return getAlignment;
-}
-
-function renderCharacter(char) {
-  var el;
-
-  el = document.getElementById('display-name-h1');
-  el.textContent = char.name;
-
-  el = document.getElementById('display-race-h2');
-  el.textContent = char.race;
-
-  el = document.getElementById('display-class-h2');
-  el.textContent = char.charClass;
-
-  el = document.getElementById('display-gender-h2');
-  el.textContent = char.gender;
-
-  el = document.getElementById('display-size-h2');
-  el.textContent = char.size;
-
-  el = document.getElementById('display-align-h2');
-  el.textContent = char.align;
-
-  el = document.getElementById('display-strength-li');
-  el.innerHTML = el.innerHTML + char.strength;
-
-  el = document.getElementById('display-dexterity-li');
-  el.innerHTML = el.innerHTML + char.dexterity;
-
-  el = document.getElementById('display-constitution-li');
-  el.innerHTML = el.innerHTML + char.constitution;
-
-  el = document.getElementById('display-intelligence-li');
-  el.innerHTML = el.innerHTML + char.intelligence;
-
-  el = document.getElementById('display-wisdom-li');
-  el.innerHTML = el.innerHTML + char.wisdom;
-
-  el = document.getElementById('display-charisma-li');
-  el.innerHTML = el.innerHTML + char.charisma;
 }
 
 function delCharacter(){
