@@ -1,7 +1,10 @@
 'use strict';
 
 var character;
-var myCharacters = [];
+var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
+if (myCharacters === null){
+  myCharacters = [];
+}
 
 function Character(name, race, gender, charClass, align) {
   this.name = name;
@@ -50,6 +53,9 @@ function main() {
 
 function handleSubmitClick() {
   generateCharacter();
+
+  localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+
   //document.location.href = 'display.html';
   //renderCharacter();
 }
@@ -144,6 +150,21 @@ function renderCharacter(char) {
 
   el = document.getElementById('display-charisma-li');
   el.innerHTML = el.innerHTML + char.charisma;
+}
+
+function delCharacter(){
+  var index = findCharacter();
+  myCharacters.splice(index, 1);
+}
+
+function findCharacter(){
+  var characterToDelete = prompt('What character do you want to delete?');
+  for (var i = 0; i < myCharacters.length; i++) {
+    if (myCharacters[i].name == characterToDelete) {
+      return i;
+    }
+  }
+  return null;
 }
 
 main();
