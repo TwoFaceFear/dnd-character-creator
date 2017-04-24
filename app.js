@@ -2,13 +2,13 @@
 
 var character;
 
-function Character(name, race, gender, size, charClass, align) {
+function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
   this.gender = gender;
-  this.size = size;
   this.charClass = charClass;
   this.align = align;
+  this.size;
   this.strength;
   this.dexterity;
   this.constitution;
