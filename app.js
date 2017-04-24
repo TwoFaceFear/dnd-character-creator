@@ -45,10 +45,14 @@ Character.prototype.setCharisma = function() {
   this.charisma += rollDice();
 };
 
+
 function main() {
 
   var submit = document.getElementById('submit');
-  submit.addEventListener('click', handleSubmitClick);
+  if(submit) {
+    submit.addEventListener('click', handleSubmitClick);
+  }
+
 }
 
 function handleSubmitClick() {
@@ -56,8 +60,8 @@ function handleSubmitClick() {
 
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
 
-  //document.location.href = 'display.html';
-  //renderCharacter();
+
+  document.location.href = 'display.html';
 }
 
 function rollDice() {
@@ -206,6 +210,5 @@ function findCharacter(){
   }
   return null;
 }
-
 
 main();
