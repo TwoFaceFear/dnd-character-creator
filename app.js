@@ -1,5 +1,7 @@
 'use strict';
 
+var character;
+
 function Character(name, race, gender, size, charClass, align) {
   this.name = name;
   this.race = race;
@@ -63,11 +65,40 @@ function generateCharacter() {
   var gender = getGender();
   var size = getSize();
   var charClass = getClass();
-  var align = getAlign();
+  var align = getAlignment();
 
-  var character = new Character(name, race, gender, size, charClass, align);
+  character = new Character(name, race, gender, size, charClass, align);
   return character;
 }
 
+function getClass(){
+  var a = document.getElementById('class');
+  var getClass = a.options[a.selectedIndex].value;
+  return getClass;
+}
+
+function getRace(){
+  var a = document.getElementById('race');
+  var getRace = a.options[a.selectedIndex].value;
+  return getRace;
+}
+
+function getGender(){
+  var a = document.getElementById('gender');
+  var getGender = a.options[a.selectedIndex].value;
+  return getGender;
+}
+
+function getSize(){
+  var a = document.getElementById('size');
+  var getSize = a.options[a.selectedIndex].value;
+  return getSize;
+}
+
+function getAlignment(){
+  var a = document.getElementById('alignment');
+  var getAlignment = a.options[a.selectedIndex].value;
+  return getAlignment;
+}
 
 main();
