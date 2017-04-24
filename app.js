@@ -3,6 +3,7 @@
 var character;
 var myCharacters = [];
 myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
+
 function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
