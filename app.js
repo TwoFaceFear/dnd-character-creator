@@ -150,6 +150,8 @@ function raceAttributes(race){
     character.charisma -=2;
     character.size = 'medium';
   }
+}
+
 function renderCharacter(char) {
   var el;
 
