@@ -1,6 +1,8 @@
 'use strict';
 
 var character;
+var myCharacters = [];
+myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 
 function Character(name, race, gender, charClass, align) {
   this.name = name;
@@ -49,6 +51,7 @@ function main() {
 
 function handleSubmitClick() {
   generateCharacter();
+  localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
 }
 
 function rollDice() {
@@ -67,6 +70,7 @@ function generateCharacter() {
   var align = getAlignment();
 
   character = new Character(name, race, gender, charClass, align);
+  myCharacters.push(character);
   return character;
 }
 
@@ -92,6 +96,21 @@ function getAlignment(){
   var a = document.getElementById('alignment');
   var getAlignment = a.options[a.selectedIndex].value;
   return getAlignment;
+}
+
+function delCharacter(){
+  var index = findCharacter();
+  myCharacters.splice(index, 1);
+}
+
+function findCharacter(){
+  var characterToDelete = prompt('What character do you want to delete?');
+  for (var i = 0; i < myCharacters.length; i++) {
+    if (myCharacters[i].name == characterToDelete) {
+      return i;
+    }
+  }
+  return null;
 }
 
 main();
