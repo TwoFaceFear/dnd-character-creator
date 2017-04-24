@@ -63,11 +63,10 @@ function generateCharacter() {
   var name = document.getElementById('name').value;
   var race = getRace();
   var gender = getGender();
-  var size = getSize();
   var charClass = getClass();
   var align = getAlignment();
 
-  character = new Character(name, race, gender, size, charClass, align);
+  character = new Character(name, race, gender, charClass, align);
   return character;
 }
 
@@ -87,12 +86,6 @@ function getGender(){
   var a = document.getElementById('gender');
   var getGender = a.options[a.selectedIndex].value;
   return getGender;
-}
-
-function getSize(){
-  var a = document.getElementById('size');
-  var getSize = a.options[a.selectedIndex].value;
-  return getSize;
 }
 
 function getAlignment(){
