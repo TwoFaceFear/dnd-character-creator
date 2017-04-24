@@ -21,7 +21,6 @@ function Character(name, race, gender, charClass, align) {
   this.charisma;
 }
 
-
 Character.prototype.setStrength = function() {
   this.strength = rollDice();
 };
