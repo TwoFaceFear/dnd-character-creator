@@ -45,6 +45,16 @@ Character.prototype.setCharisma = function() {
   this.charisma = rollDice();
 };
 
+var url = window.location.href ;
+var array = url.split('/');
+
+var lastsegment = array[array.length-1];
+
+
+if (lastsegment === 'create.html?'){
+  main();
+}
+
 function main() {
 
   var submit = document.getElementById('submit');
@@ -56,8 +66,9 @@ function handleSubmitClick() {
 
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
 
-  //document.location.href = 'display.html';
-  //renderCharacter();
+  document.location.href = 'display.html';
+  var lastIndex = myCharacters.length -1;
+  renderCharacter(myCharacters[lastIndex]);
 }
 
 function rollDice() {
@@ -166,5 +177,3 @@ function findCharacter(){
   }
   return null;
 }
-
-main();
