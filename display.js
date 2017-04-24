@@ -4,14 +4,6 @@ renderCharacter(myCharacters[lastIndex]);
 
 function renderCharacter(char) {
   var el;
-  var char;
-  var chars = JSON.parse(localStorage.getItem(myCharacters));
-
-  // for (var i = 0; i < myCharacters.length; i++) {
-  //   if (myCharacters[i].name == name) {
-  //     char = chars[i];
-  //   }
-  // }
 
   el = document.getElementById('display-name-h1');
   el.textContent = char.name;

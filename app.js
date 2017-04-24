@@ -45,16 +45,14 @@ Character.prototype.setCharisma = function() {
   this.charisma = rollDice();
 };
 
-  main();
+main();
 
 function main() {
 
-  //if(location.pathname.endsWith('create.html')) {
   var submit = document.getElementById('submit');
   if(submit) {
     submit.addEventListener('click', handleSubmitClick);
   }
-  //}
 }
 
 function handleSubmitClick() {
