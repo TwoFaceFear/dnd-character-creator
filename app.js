@@ -1,6 +1,7 @@
 'use strict';
 
 var character;
+
 var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
@@ -10,45 +11,45 @@ function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
   this.gender = gender;
+  this.size = size;
   this.charClass = charClass;
   this.align = align;
-  this.size;
-  this.strength = 0;
-  this.dexterity = 0;
-  this.constitution = 0;
-  this.intelligence = 0;
-  this.wisdom = 0;
-  this.charisma = 0;
+  this.strength;
+  this.dexterity;
+  this.constitution;
+  this.intelligence;
+  this.wisdom;
+  this.charisma;
 }
 
 Character.prototype.setStrength = function() {
-  this.strength += rollDice();
+  this.strength = rollDice();
 };
 
 Character.prototype.setDexterity = function() {
-  this.dexterity += rollDice();
+  this.dexterity = rollDice();
 };
 
 Character.prototype.setConstitution = function() {
-  this.constitution += rollDice();
+  this.constitution = rollDice();
 };
 
 Character.prototype.setIntelligence = function() {
-  this.intelligence += rollDice();
+  this.intelligence = rollDice();
 };
 
 Character.prototype.setWisdom = function() {
-  this.wisdom += rollDice();
+  this.wisdom = rollDice();
 };
 
 Character.prototype.setCharisma = function() {
-  this.charisma += rollDice();
+  this.charisma = rollDice();
 };
-
 
 function main() {
 
   var submit = document.getElementById('submit');
+
   if(submit) {
     submit.addEventListener('click', handleSubmitClick);
   }
@@ -79,18 +80,6 @@ function generateCharacter() {
   var align = getAlignment();
 
   character = new Character(name, race, gender, charClass, align);
-  console.log(character.strength);
-  raceAttributes(race);
-  console.log(character.strength);
-
-  character.setWisdom();
-  character.setCharisma();
-  character.setStrength();
-  character.setDexterity();
-  character.setIntelligence();
-  character.setConstitution();
-
-  myCharacters.push(character);
   return character;
 }
 
@@ -98,6 +87,12 @@ function getClass(){
   var a = document.getElementById('class');
   var getClass = a.options[a.selectedIndex].value;
   return getClass;
+}
+
+function getRace(){
+  var a = document.getElementById('race');
+  var getRace = a.options[a.selectedIndex].value;
+  return getRace;
 }
 
 function getGender(){

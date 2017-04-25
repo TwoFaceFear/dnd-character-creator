@@ -6,7 +6,11 @@
 
   C: create base .JS file and get a base set of functions up and running.
 
-
+DAY 2 goals:
+  assignable rolls
+  Basic CSS
+  Multi Character Display
+  
 2: finish product
 
 
