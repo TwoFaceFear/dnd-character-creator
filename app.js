@@ -1,7 +1,7 @@
 'use strict';
 
 var character;
-var timesToRoll = 5;
+var timesToRoll = 6;
 var rolls = [];
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
@@ -99,9 +99,11 @@ function setAttributes() {
   var attributes = ['Strength', 'Dexterity', 'Intelligence', 'Charisma', 'Wisdom', 'Constitution'];
   rollDice(timesToRoll);
 
-  var div = document.getElementById('attributes-div');
+  var table = document.getElementById('attributes-table');
+  var td;
   var sel;
   for (var j = 0; j < rolls.length; j++) {
+    td = document.createElement('td');
     sel = document.createElement('select');
     sel.setAttribute('name', 'roll ' + (j+1));
     var opt;
@@ -111,7 +113,8 @@ function setAttributes() {
       opt.textContent = attributes[i];
       sel.appendChild(opt);
     }
-    div.appendChild(sel);
+    td.appendChild(sel);
+    table.appendChild(td);
   }
   //create drop downs that are associated with index of rolls[]
   //get roll from array
