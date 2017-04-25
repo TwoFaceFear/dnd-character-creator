@@ -89,21 +89,78 @@ function generateCharacter() {
   raceAttributes(race);
   console.log(character.strength);
 
-  setAttributes();
+  rollDice(timesToRoll);
+  renderAttributesTable();
 
   myCharacters.push(character);
   return character;
 }
 
-function setAttributes() {
-  rollDice(timesToRoll);
+function renderAttributesTable() {
+  var attributes = ['strength', 'dexterity', 'intelligence', 'charisma', 'wisdom', 'constitution'];
+  console.log('rolls', rolls);
+  var attributesDiv = document.getElementById('attributes-div');
+  attributesDiv.textContent = '';
+  var rollDiv;
+  var attDiv;
+  var numDiv;
+  var upDiv;
+  var dwnDiv;
+  for(var i = 0; i < rolls.length; i++) {
+    rollDiv = document.createElement('div');
+    rollDiv.setAttribute('roll-index', i);
 
-  character.setWisdom();
-  character.setCharisma();
-  character.setStrength();
-  character.setDexterity();
-  character.setIntelligence();
-  character.setConstitution();
+    attDiv = document.createElement('div');
+    attDiv.innerHTML = '<h3>' + attributes[i] + '</h3>';
+    rollDiv.appendChild(attDiv);
+
+    numDiv = document.createElement('div');
+    numDiv.innerHTML = '<p>' + rolls[i] + '</p>';
+    rollDiv.appendChild(numDiv);
+
+    if(i > 0) {
+      upDiv = document.createElement('div');
+      upDiv.innerHTML = '<p>up</p>';
+      upDiv.addEventListener('click', handleUpClick);
+      rollDiv.appendChild(upDiv);
+    }
+
+    if(i < rolls.length - 1) {
+      dwnDiv = document.createElement('div');
+      dwnDiv.innerHTML = '<p>down</p>';
+      dwnDiv.addEventListener('click', handleDwnClick);
+      rollDiv.appendChild(dwnDiv);
+    }
+
+    attributesDiv.appendChild(rollDiv);
+  }
+
+  // character.setWisdom();
+  // character.setCharisma();
+  // character.setStrength();
+  // character.setDexterity();
+  // character.setIntelligence();
+  // character.setConstitution();
+}
+
+function handleUpClick() {
+  var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
+  swapRolls(indexA, indexA-1);
+  renderAttributesTable();
+}
+
+function handleDwnClick() {
+  console.log(event.target.parentElement.parentElement);
+  var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
+  swapRolls(indexA, indexA+1);
+  renderAttributesTable();
+}
+
+function swapRolls(indexA, indexB) {
+  var tmp = 0;
+  tmp = rolls[indexA];
+  rolls[indexA] = rolls[indexB];
+  rolls[indexB] = tmp;
 }
 
 function getClass(){
