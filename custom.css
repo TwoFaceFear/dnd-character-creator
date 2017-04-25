@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     width: 100%;
     margin: 0 auto;
@@ -32,4 +33,18 @@ header {
 
 body {
   background-color: hsla(30, 23%, 95%, 1);
+=======
+#charStory {
+  height: 200px;
+  width: 200px;
+}
+
+input[type="text"] {
+height: 300px;
+width: 300px;
+}
+
+header.style {
+  height: 200px;
+>>>>>>> f0b8d44c41280a57a56dcacc3442c93f259c062c
 }
