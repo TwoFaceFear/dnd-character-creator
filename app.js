@@ -98,7 +98,6 @@ function generateCharacter() {
 
 function renderAttributesTable() {
   var attributes = ['strength', 'dexterity', 'intelligence', 'charisma', 'wisdom', 'constitution'];
-  console.log('rolls', rolls);
   var attributesDiv = document.getElementById('attributes-div');
   attributesDiv.textContent = '';
   var rollDiv;
@@ -145,21 +144,21 @@ function renderAttributesTable() {
 
 function handleUpClick() {
   var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
-  swapRolls(indexA, indexA-1);
+  swapRolls(indexA, (indexA - 1));
   renderAttributesTable();
 }
 
 function handleDwnClick() {
-  console.log(event.target.parentElement.parentElement);
   var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
-  swapRolls(indexA, indexA+1);
+  swapRolls(indexA, (indexA + 1));
   renderAttributesTable();
 }
 
 function swapRolls(indexA, indexB) {
-  var tmp = 0;
-  tmp = rolls[indexA];
+  var tmp = rolls[indexA];
+  console.log(rolls);
   rolls[indexA] = rolls[indexB];
+  console.log(rolls);
   rolls[indexB] = tmp;
 }
 
