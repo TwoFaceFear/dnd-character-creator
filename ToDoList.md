@@ -10,7 +10,7 @@ DAY 2 goals:
   assignable rolls
   Basic CSS
   Multi Character Display
-  
+
 2: finish product
 
 
