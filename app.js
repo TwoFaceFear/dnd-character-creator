@@ -96,11 +96,8 @@ function generateCharacter() {
 }
 
 function setAttributes() {
-  var attributes = ['Strength', 'Dexterity', 'Intelligence', 'Charisma', 'Wisdom', 'Constitution'];
   rollDice(timesToRoll);
 
-  var table = document.getElementById('attributes-table');
-  
   character.setWisdom();
   character.setCharisma();
   character.setStrength();
