@@ -34,4 +34,15 @@ body {
   background-color: hsla(30, 23%, 95%, 1);
 }
 
-#
+.dropdown {
+  width: auto;
+}
+
+#rolls {
+  width: 120px;
+}
+.rolls {
+  width: 120px;
+  display-type: block;
+  margin: 2px;
+}

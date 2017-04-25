@@ -14,13 +14,13 @@
       <h1 id="page-title">Create New Custom Character</h1>
       <div id="wrapper">
         <div id="characterPicture">Character Picture
-          <input type="file" name="characterPicture" id="charPic" />
+          <input type="file" id="charPic" />
         </div>
 
         <div id="basicInfo">Basic Information
           <input type="text" placeholder="name" name="name" id="name" />
 
-          <select name="race" id="race">
+          <select class="dropdown" id="race">
             <option  disabled selected>Race</option>
             <option value="gnome"> Gnome </option>
             <option value="human"> Human </option>
@@ -30,7 +30,7 @@
             <option value="dwarf"> Dwarf </option>
           </select>
 
-          <select name="class" id="class">
+          <select class="dropdown" id="class">
             <option  disabled selected>Class</option>
             <option value="ranger"> Ranger </option>
             <option value="wizard"> Wizard </option>
@@ -40,13 +40,13 @@
             <option value="cleric"> Cleric </option>
           </select>
 
-          <select name="gender" id="gender">
+          <select class="dropdown" id="gender">
             <option  disabled selected>Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
 
-          <select name="alignment" id="alignment">
+          <select class="dropdown" id="alignment">
             <option  disabled selected>Alignment</option>
             <option value="chaoticGood">Chaotic Good</option>
             <option value="chaoticNeutral">Chaotic Neutral</option>
@@ -59,7 +59,7 @@
             <option value="lawfulEvil">Lawful Evil</option>
           </select>
 
-          <select name="size" id="size">
+          <select class="dropdown" id="size">
             <option disabled selected>Size</option>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
@@ -67,33 +67,33 @@
           </select>
 
           <div id="height">Height
-            <input type="text" placeholder="feet" name="feet" id="feet" />
+            <input type="text" placeholder="feet" id="feet" />
 
-            <input type="text" placeholder="inches" name="inches" id="inches" />
+            <input type="text" placeholder="inches" id="inches" />
           </div>
         </div>
 
         <div id="rolls">Rolls
-          <input type="text" placeholder="weight" name="weight" id="weight" />
+          <input type="text" placeholder="weight" class="rolls" />
 
-          <input type="text" placeholder="strength" name="strengthRoll" id="strengthRoll" />
+          <input type="text" placeholder="strength" class="rolls" />
 
-          <input type="text" placeholder="dexterity" name="dexterityRoll" id="dexterityRoll" />
+          <input type="text" placeholder="dexterity" class="rolls" />
 
-          <input type="text" placeholder="constitution" name="constitutionRoll" id="constitutionRoll" />
+          <input type="text" placeholder="constitution" class="rolls" />
 
-          <input type="text" placeholder="intelligence" name="intelligenceRoll" id="intelligenceRoll" />
+          <input type="text" placeholder="intelligence" class="rolls" />
 
-          <input type="text" placeholder="wisdom" name="wisdomRoll" id="wisdomRoll" />
+          <input type="text" placeholder="wisdom" class="rolls" />
 
-          <input type="text" placeholder="charisma" name="charismaRoll" id="charismaRoll" />
+          <input type="text" placeholder="charisma" class="rolls" />
         </div>
 
         <div id="charStory">Character Story
-          <textarea name="characterStory" id="characterStory"></textarea>
+          <textarea id="characterStory"></textarea>
         </div>
         <div id="charLooks">Looks
-          <textarea name="looks" id="looks"></textarea>
+          <textarea id="looks"></textarea>
         </div>
       </div>
 
