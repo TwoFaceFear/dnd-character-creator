@@ -1,17 +1,10 @@
+var currentCharacter
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
-var lastIndex = myCharacters.length -1;
-renderCharacter(myCharacters[lastIndex]);
+currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
+renderCharacter(currentCharacter);
 
 function renderCharacter(char) {
   var el;
-  var char;
-  var chars = JSON.parse(localStorage.getItem(myCharacters));
-
-  // for (var i = 0; i < myCharacters.length; i++) {
-  //   if (myCharacters[i].name == name) {
-  //     char = chars[i];
-  //   }
-  // }
 
   el = document.getElementById('display-name-h1');
   el.textContent = char.name;
@@ -48,4 +41,39 @@ function renderCharacter(char) {
 
   el = document.getElementById('display-charisma-li');
   el.innerHTML = el.innerHTML + char.charisma;
+}
+
+for (var i = 0; i < myCharacters.length; i++){
+  var sidebar = document.getElementById('sidebar');
+  var aTag = document.createElement('a');
+  aTag.setAttribute('href','display.html');
+  aTag.setAttribute('name', 'click')
+  aTag.setAttribute('id', i)
+  aTag.innerHTML = myCharacters[i].name;
+  sidebar.appendChild(aTag);
+}
+
+Array.prototype.swap = function (x,y) {
+  var b = this[x];
+  this[x] = this[y];
+  this[y] = b;
+  return this;
+}
+
+var aTags = []
+function eventAdder (){
+    aTags = document.getElementsByName('click');
+    for (var i=0;i<aTags.length;i++){
+      var a = aTags[i]
+         a.addEventListener('click', handleSubmitClick);
+    }
+}
+eventAdder();
+
+function handleSubmitClick(event) {
+  // event.preventDefault();
+  var currentTarget = event.target.id
+  console.log(currentTarget)
+  currentCharacter = myCharacters[currentTarget]
+  localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
 }

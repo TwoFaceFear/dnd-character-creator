@@ -1,11 +1,11 @@
 'use strict';
 
 var character;
+var currentCharacter
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
   myCharacters = [];
 }
-
 function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
@@ -57,11 +57,12 @@ function main() {
 
 function handleSubmitClick() {
   generateCharacter();
-
+  var lastIndex = myCharacters.length -1;
+  currentCharacter = myCharacters[lastIndex]
+  localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
-
-
   document.location.href = 'display.html';
+
 }
 
 function rollDice() {
