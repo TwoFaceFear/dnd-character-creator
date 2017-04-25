@@ -100,26 +100,8 @@ function setAttributes() {
   rollDice(timesToRoll);
 
   var table = document.getElementById('attributes-table');
-  var td;
-  var sel;
-  for (var j = 0; j < rolls.length; j++) {
-    td = document.createElement('td');
-    sel = document.createElement('select');
-    sel.setAttribute('name', 'roll ' + (j+1));
-    var opt;
-    for(var i = 0; i < rolls.length; i++) {
-      opt = document.createElement('option');
-      opt.setAttribute('value', attributes[i]);
-      opt.textContent = attributes[i];
-      sel.appendChild(opt);
-    }
-    td.appendChild(sel);
-    table.appendChild(td);
-  }
-  //create drop downs that are associated with index of rolls[]
-  //get roll from array
-  //pass value to set attribute
-  character.setWisdom(rolls[0]);
+  
+  character.setWisdom();
   character.setCharisma();
   character.setStrength();
   character.setDexterity();
