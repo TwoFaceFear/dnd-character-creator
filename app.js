@@ -187,12 +187,6 @@ function getAlignment(){
   return getAlignment;
 }
 
-function getRace(){
-  var a = document.getElementById('race');
-  var getRace = a.options[a.selectedIndex].value;
-  return getRace;
-}
-
 function raceAttributes(race){
   switch(race){
   case 'gnome':
@@ -228,61 +222,6 @@ function raceAttributes(race){
     character.charisma -=2;
     character.size = 'medium';
   }
-}
-
-function renderCharacter(char) {
-  var el;
-
-  el = document.getElementById('display-name-h1');
-  el.textContent = char.name;
-
-  el = document.getElementById('display-race-h2');
-  el.textContent = char.race;
-
-  el = document.getElementById('display-class-h2');
-  el.textContent = char.charClass;
-
-  el = document.getElementById('display-gender-h2');
-  el.textContent = char.gender;
-
-  el = document.getElementById('display-size-h2');
-  el.textContent = char.size;
-
-  el = document.getElementById('display-align-h2');
-  el.textContent = char.align;
-
-  el = document.getElementById('display-strength-li');
-  el.innerHTML = el.innerHTML + char.strength;
-
-  el = document.getElementById('display-dexterity-li');
-  el.innerHTML = el.innerHTML + char.dexterity;
-
-  el = document.getElementById('display-constitution-li');
-  el.innerHTML = el.innerHTML + char.constitution;
-
-  el = document.getElementById('display-intelligence-li');
-  el.innerHTML = el.innerHTML + char.intelligence;
-
-  el = document.getElementById('display-wisdom-li');
-  el.innerHTML = el.innerHTML + char.wisdom;
-
-  el = document.getElementById('display-charisma-li');
-  el.innerHTML = el.innerHTML + char.charisma;
-}
-
-function delCharacter(){
-  var index = findCharacter();
-  myCharacters.splice(index, 1);
-}
-
-function findCharacter(){
-  var characterToDelete = prompt('What character do you want to delete?');
-  for (var i = 0; i < myCharacters.length; i++) {
-    if (myCharacters[i].name == characterToDelete) {
-      return i;
-    }
-  }
-  return null;
 }
 
 main();
