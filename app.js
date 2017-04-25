@@ -1,12 +1,13 @@
 'use strict';
 
 var character;
-
-var currentCharacter;
+var timesToRoll = 6;
+var rolls = [];
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
   myCharacters = [];
 }
+
 function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
@@ -22,28 +23,28 @@ function Character(name, race, gender, charClass, align) {
   this.charisma;
 }
 
-Character.prototype.setStrength = function() {
-  this.strength = rollDice();
+Character.prototype.setStrength = function(num) {
+  this.strength = num;
 };
 
-Character.prototype.setDexterity = function() {
-  this.dexterity = rollDice();
+Character.prototype.setDexterity = function(num) {
+  this.dexterity = num;
 };
 
-Character.prototype.setConstitution = function() {
-  this.constitution = rollDice();
+Character.prototype.setConstitution = function(num) {
+  this.constitution = num;
 };
 
-Character.prototype.setIntelligence = function() {
-  this.intelligence = rollDice();
+Character.prototype.setIntelligence = function(num) {
+  this.intelligence = num;
 };
 
-Character.prototype.setWisdom = function() {
-  this.wisdom = rollDice();
+Character.prototype.setWisdom = function(num) {
+  this.wisdom = num;
 };
 
-Character.prototype.setCharisma = function() {
-  this.charisma = rollDice();
+Character.prototype.setCharisma = function(num) {
+  this.charisma = num;
 };
 
 function main() {
@@ -53,23 +54,22 @@ function main() {
   if(submit) {
     submit.addEventListener('click', handleSubmitClick);
   }
+
 }
 
 function handleSubmitClick() {
   generateCharacter();
-  var lastIndex = myCharacters.length -1;
-  currentCharacter = myCharacters[lastIndex];
-  localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
-  localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
-  document.location.href = 'display.html';
 }
 
-function rollDice() {
-  var total = 0;
-  for(var i = 0; i < 5; i++) {
-    total += Math.floor(Math.random() * 6 + 1);
+function rollDice(numRolls) {
+  for(var i = 0; i < numRolls; i++) {
+    var total = 0;
+    for(var j = 0; j < 5; j++) {
+      total += Math.floor(Math.random() * 6 + 1);
+    }
+    rolls[i] = total;
   }
-  return total;
+  return rolls;
 }
 
 function generateCharacter() {
@@ -80,7 +80,87 @@ function generateCharacter() {
   var align = getAlignment();
 
   character = new Character(name, race, gender, charClass, align);
+  raceAttributes(race);
+  rollDice(timesToRoll);
+  renderAttributesTable();
+  myCharacters.push(character);
+
   return character;
+}
+
+function renderAttributesTable() {
+  var attributes = ['strength', 'dexterity', 'intelligence', 'charisma', 'wisdom', 'constitution'];
+  var attributesDiv = document.getElementById('attributes-div');
+  attributesDiv.textContent = '';
+  var rollDiv;
+  var attDiv;
+  var numDiv;
+  var upDiv;
+  var dwnDiv;
+  for(var i = 0; i < rolls.length; i++) {
+    rollDiv = document.createElement('div');
+    rollDiv.setAttribute('roll-index', i);
+
+    attDiv = document.createElement('div');
+    attDiv.innerHTML = '<h3>' + attributes[i] + '</h3>';
+    rollDiv.appendChild(attDiv);
+
+    numDiv = document.createElement('div');
+    numDiv.innerHTML = '<p>' + rolls[i] + '</p>';
+    rollDiv.appendChild(numDiv);
+
+    if(i > 0) {
+      upDiv = document.createElement('div');
+      upDiv.innerHTML = '<p>up</p>';
+      upDiv.addEventListener('click', handleUpClick);
+      rollDiv.appendChild(upDiv);
+    }
+
+    if(i < rolls.length - 1) {
+      dwnDiv = document.createElement('div');
+      dwnDiv.innerHTML = '<p>down</p>';
+      dwnDiv.addEventListener('click', handleDwnClick);
+      rollDiv.appendChild(dwnDiv);
+    }
+
+    attributesDiv.appendChild(rollDiv);
+  }
+  var sbmtDiv = document.createElement('div');
+  sbmtDiv.innerHTML = '<h3>SUBMIT</h3>';
+  sbmtDiv.addEventListener('click', handleSbmtDivClick);
+  rollDiv.appendChild(sbmtDiv);
+}
+
+function handleSbmtDivClick() {
+  character.setStrength(rolls[0]);
+  character.setDexterity(rolls[1]);
+  character.setIntelligence(rolls[2]);
+  character.setCharisma(rolls[3]);
+  character.setWisdom(rolls[4]);
+  character.setConstitution(rolls[5]);
+
+  localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+  document.location.href = 'display.html';
+}
+
+function handleUpClick() {
+  var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
+  indexA = parseInt(indexA);
+  swapRolls(indexA, indexA - 1);
+  renderAttributesTable();
+}
+
+function handleDwnClick() {
+  var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
+  indexA = parseInt(indexA);
+  swapRolls(indexA, indexA + 1);
+  renderAttributesTable();
+}
+
+function swapRolls(indexA, indexB) {
+  var tmp = rolls[indexA];
+  rolls[indexA] = rolls[indexB];
+  rolls[indexB] = tmp;
 }
 
 function getClass(){
@@ -148,6 +228,46 @@ function raceAttributes(race){
     character.charisma -=2;
     character.size = 'medium';
   }
+}
+
+function renderCharacter(char) {
+  var el;
+
+  el = document.getElementById('display-name-h1');
+  el.textContent = char.name;
+
+  el = document.getElementById('display-race-h2');
+  el.textContent = char.race;
+
+  el = document.getElementById('display-class-h2');
+  el.textContent = char.charClass;
+
+  el = document.getElementById('display-gender-h2');
+  el.textContent = char.gender;
+
+  el = document.getElementById('display-size-h2');
+  el.textContent = char.size;
+
+  el = document.getElementById('display-align-h2');
+  el.textContent = char.align;
+
+  el = document.getElementById('display-strength-li');
+  el.innerHTML = el.innerHTML + char.strength;
+
+  el = document.getElementById('display-dexterity-li');
+  el.innerHTML = el.innerHTML + char.dexterity;
+
+  el = document.getElementById('display-constitution-li');
+  el.innerHTML = el.innerHTML + char.constitution;
+
+  el = document.getElementById('display-intelligence-li');
+  el.innerHTML = el.innerHTML + char.intelligence;
+
+  el = document.getElementById('display-wisdom-li');
+  el.innerHTML = el.innerHTML + char.wisdom;
+
+  el = document.getElementById('display-charisma-li');
+  el.innerHTML = el.innerHTML + char.charisma;
 }
 
 function delCharacter(){
