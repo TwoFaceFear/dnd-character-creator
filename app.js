@@ -187,12 +187,6 @@ function getAlignment(){
   return getAlignment;
 }
 
-function getRace(){
-  var a = document.getElementById('race');
-  var getRace = a.options[a.selectedIndex].value;
-  return getRace;
-}
-
 function raceAttributes(race){
   switch(race){
   case 'gnome':
