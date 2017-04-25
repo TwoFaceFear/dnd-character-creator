@@ -135,7 +135,7 @@ function raceAttributes(race){
     character.intelligence -= 2;
     character.wisdom -= 2;
     character.charisma -= 2;
-    character.size = 'meduim';
+    character.size = 'medium';
     break;
   case 'elf':
     character.dexterity += 2;
