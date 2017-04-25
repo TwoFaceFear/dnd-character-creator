@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Chaotic Creator</title>
+      <link href="custom.css" type="stylesheet" style="text/css" />
+    </head>
+    <body>
+      <div id="characterPicture">Character Picture
+        <input type="file" name="characterPicture" id="charPic" />
+      </div>
+
+      <div id="basicInfo">Basic Information
+        <input type="text" placeholder="name" name="name" id="name" />
+
+        <select name="race" id="race">
+          <option  disabled selected>Race</option>
+          <option value="gnome"> Gnome </option>
+          <option value="human"> Human </option>
+          <option value="orc"> Orc </option>
+          <option value="elf"> Elf </option>
+          <option value="halfing"> Halfing </option>
+          <option value="dwarf"> Dwarf </option>
+        </select>
+
+        <select name="class" id="class">
+          <option  disabled selected>Class</option>
+          <option value="ranger"> Ranger </option>
+          <option value="wizard"> Wizard </option>
+          <option value="rogue"> Rogue </option>
+          <option value="fighter"> Fighter </option>
+          <option value="paladin"> Paladin </option>
+          <option value="cleric"> Cleric </option>
+        </select>
+
+        <select name="gender" id="gender">
+          <option  disabled selected>Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <select name="alignment" id="alignment">
+          <option  disabled selected>Alignment</option>
+          <option value="chaoticGood">Chaotic Good</option>
+          <option value="chaoticNeutral">Chaotic Neutral</option>
+          <option value="chaoticEvil">Chaotic Evil</option>
+          <option value="neutralGood">Neutral Good </option>
+          <option value="neutralTrue">Neutral True</option>
+          <option value="neutralEvil">Neutral Evil</option>
+          <option value="lawfulGood">Lawful Good</option>
+          <option value="lawfulNeutral">Lawful Neutral</option>
+          <option value="lawfulEvil">Lawful Evil</option>
+        </select>
+
+        <select name="size" id="size">
+          <option disabled selected>Size</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option vlue="large">Large</option>
+        </select>
+
+        <div id="height">Height
+          <input type="text" placeholder="feet" name="feet" id="feet" />
+
+          <input type="text" placeholder="inches" name="inches" id="inches" />
+        </div>
+      </div>
+
+      <div id="rolls">Rolls
+        <input type="text" placeholder="weight" name="weight" id="weight" />
+
+        <input type="text" placeholder="strength" name="strengthRoll" id="strengthRoll" />
+
+        <input type="text" placeholder="dexterity" name="dexterityRoll" id="dexterityRoll" />
+
+        <input type="text" placeholder="constitution" name="constitutionRoll" id="constitutionRoll" />
+
+        <input type="text" placeholder="intelligence" name="intelligenceRoll" id="intelligenceRoll" />
+
+        <input type="text" placeholder="wisdom" name="wisdomRoll" id="wisdomRoll" />
+
+        <input type="text" placeholder="charisma" name="charismaRoll" id="charismaRoll" />
+      </div>
+
+      <div id="charStory">Character Story
+        <input type="text" name="characterStory" id="characterStory"  />
+      </div>
+
+      <input type="text" placeholder="looks" name="looks" id="looks" />
+
+    </body>
+  </html>
