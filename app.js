@@ -3,6 +3,7 @@
 var character;
 var timesToRoll = 6;
 var rolls = [];
+var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
   myCharacters = [];
@@ -12,15 +13,15 @@ function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
   this.gender = gender;
+  this.size;
   this.charClass = charClass;
   this.align = align;
-  this.size;
-  this.strength = 0;
-  this.dexterity = 0;
-  this.constitution = 0;
-  this.intelligence = 0;
-  this.wisdom = 0;
-  this.charisma = 0;
+  this.strength;
+  this.dexterity;
+  this.constitution;
+  this.intelligence;
+  this.wisdom;
+  this.charisma;
 }
 
 Character.prototype.setStrength = function(num) {
@@ -47,10 +48,10 @@ Character.prototype.setCharisma = function(num) {
   this.charisma = num;
 };
 
-
 function main() {
 
   var submit = document.getElementById('submit');
+
   if(submit) {
     submit.addEventListener('click', handleSubmitClick);
   }
@@ -85,14 +86,11 @@ function generateCharacter() {
   var align = getAlignment();
 
   character = new Character(name, race, gender, charClass, align);
-  console.log(character.strength);
   raceAttributes(race);
-  console.log(character.strength);
-
   rollDice(timesToRoll);
   renderAttributesTable();
-
   myCharacters.push(character);
+
   return character;
 }
 
@@ -144,21 +142,25 @@ function renderAttributesTable() {
 
 function handleUpClick() {
   var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
-  swapRolls(indexA, (indexA - 1));
+  indexA = parseInt(indexA);
+  swapRolls(indexA, indexA - 1);
   renderAttributesTable();
 }
 
 function handleDwnClick() {
   var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
-  swapRolls(indexA, (indexA + 1));
+  console.log('index a before', indexA);
+  indexA = parseInt(indexA);
+  swapRolls(indexA, indexA + 1);
   renderAttributesTable();
 }
 
 function swapRolls(indexA, indexB) {
+  console.log('indexA', indexA);
+  console.log('indexB', indexB);
   var tmp = rolls[indexA];
-  console.log(rolls);
+  console.log('rolls', rolls);
   rolls[indexA] = rolls[indexB];
-  console.log(rolls);
   rolls[indexB] = tmp;
 }
 
@@ -166,6 +168,12 @@ function getClass(){
   var a = document.getElementById('class');
   var getClass = a.options[a.selectedIndex].value;
   return getClass;
+}
+
+function getRace(){
+  var a = document.getElementById('race');
+  var getRace = a.options[a.selectedIndex].value;
+  return getRace;
 }
 
 function getGender(){

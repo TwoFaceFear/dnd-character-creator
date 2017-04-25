@@ -1,0 +1,38 @@
+* {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: 'Istok Web', sans-serif;
+    line-height: 1.5em;
+  }
+  #header {
+    background: #63605d;
+    height: 100px;
+  }
+/*
+orange: rgb(255, 83, 13);
+  hsla(17, 100%, 53%, 1);
+  #FF530D;
+
+  dark gray: rgb(46, 45, 44);
+  hsla(30, 2%, 18%, 1);
+  #2e2d2c;
+
+  gray: rgb(99, 96, 93);
+  hsla(30, 3%, 38%, 1);
+  #63605d;
+
+  accent gray(light): rgb(232, 229, 226);
+  hsla(30, 11%, 90%, 1);
+  #e8e5e2;
+
+  off white: rgb(245, 242, 239);
+  hsla(30, 23%, 95%, 1);
+  #f5f2ef;
+
+*/
