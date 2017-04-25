@@ -2,7 +2,12 @@
 
 var character;
 
-function Character(name, race, gender, size, charClass, align) {
+var currentCharacter;
+var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
+if (myCharacters === null){
+  myCharacters = [];
+}
+function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
   this.gender = gender;
@@ -44,11 +49,19 @@ Character.prototype.setCharisma = function() {
 function main() {
 
   var submit = document.getElementById('submit');
-  submit.addEventListener('click', handleSubmitClick);
+
+  if(submit) {
+    submit.addEventListener('click', handleSubmitClick);
+  }
 }
 
 function handleSubmitClick() {
   generateCharacter();
+  var lastIndex = myCharacters.length -1;
+  currentCharacter = myCharacters[lastIndex];
+  localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
+  localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+  document.location.href = 'display.html';
 }
 
 function rollDice() {
@@ -92,6 +105,64 @@ function getAlignment(){
   var a = document.getElementById('alignment');
   var getAlignment = a.options[a.selectedIndex].value;
   return getAlignment;
+}
+
+function getRace(){
+  var a = document.getElementById('race');
+  var getRace = a.options[a.selectedIndex].value;
+  return getRace;
+}
+
+function raceAttributes(race){
+  switch(race){
+  case 'gnome':
+    character.constitution += 2;
+    character.charisma += 2;
+    character.strength -= 2;
+    character.size = 'small';
+    break;
+  case 'human':
+    character.size = 'medium';
+    break;
+  case 'orc':
+    character.strength += 4;
+    character.intelligence -= 2;
+    character.wisdom -= 2;
+    character.charisma -= 2;
+    character.size = 'meduim';
+    break;
+  case 'elf':
+    character.dexterity += 2;
+    character.charisma += 2;
+    character.constitution -= 2;
+    character.size = 'medium';
+    break;
+  case 'halfling':
+    character.dexterity += 2;
+    character.charisma += 2;
+    character.strength -= 2;
+    character.size = 'small';
+    break;
+  case 'dwarf':
+    character.constitution += 2;
+    character.charisma -=2;
+    character.size = 'medium';
+  }
+}
+
+function delCharacter(){
+  var index = findCharacter();
+  myCharacters.splice(index, 1);
+}
+
+function findCharacter(){
+  var characterToDelete = prompt('What character do you want to delete?');
+  for (var i = 0; i < myCharacters.length; i++) {
+    if (myCharacters[i].name == characterToDelete) {
+      return i;
+    }
+  }
+  return null;
 }
 
 main();
