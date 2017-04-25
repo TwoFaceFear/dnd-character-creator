@@ -1,4 +1,13 @@
-#characterStory {
+#charStory {
   height: 200px;
-  widht: 200px;
+  width: 200px;
+}
+
+input[type="text"] {
+height: 300px;
+width: 300px;
+}
+
+header.style {
+  height: 200px;
 }
