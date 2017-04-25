@@ -1,4 +1,4 @@
-var currentCharacter
+var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
 renderCharacter(currentCharacter);
@@ -47,8 +47,8 @@ for (var i = 0; i < myCharacters.length; i++){
   var sidebar = document.getElementById('sidebar');
   var aTag = document.createElement('a');
   aTag.setAttribute('href','display.html');
-  aTag.setAttribute('name', 'click')
-  aTag.setAttribute('id', i)
+  aTag.setAttribute('name', 'click');
+  aTag.setAttribute('id', i);
   aTag.innerHTML = myCharacters[i].name;
   sidebar.appendChild(aTag);
 }
@@ -58,22 +58,22 @@ Array.prototype.swap = function (x,y) {
   this[x] = this[y];
   this[y] = b;
   return this;
-}
+};
 
-var aTags = []
+var aTags = [];
 function eventAdder (){
-    aTags = document.getElementsByName('click');
-    for (var i=0;i<aTags.length;i++){
-      var a = aTags[i]
-         a.addEventListener('click', handleSubmitClick);
-    }
+  aTags = document.getElementsByName('click');
+  for (var i=0;i<aTags.length;i++){
+    var a = aTags[i];
+    a.addEventListener('click', handleSubmitClick);
+  }
 }
 eventAdder();
 
 function handleSubmitClick(event) {
   // event.preventDefault();
-  var currentTarget = event.target.id
-  console.log(currentTarget)
-  currentCharacter = myCharacters[currentTarget]
+  var currentTarget = event.target.id;
+  console.log(currentTarget);
+  currentCharacter = myCharacters[currentTarget];
   localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
 }
