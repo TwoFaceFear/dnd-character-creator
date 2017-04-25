@@ -11,7 +11,7 @@ function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
   this.gender = gender;
-  this.size = size;
+  this.size;
   this.charClass = charClass;
   this.align = align;
   this.strength;
