@@ -1,8 +1,12 @@
 var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
-renderCharacter(currentCharacter);
 
+if (currentCharacter < 1){
+  currentCharacter = myCharacters[0];
+}
+
+renderCharacter(currentCharacter);
 function renderCharacter(char) {
   var el;
 
@@ -76,4 +80,29 @@ function handleSubmitClick(event) {
   console.log(currentTarget);
   currentCharacter = myCharacters[currentTarget];
   localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
+}
+
+function delCharacter(){
+  var index = findCharacter();
+  myCharacters.splice(index, 1);
+}
+
+function findCharacter(){
+  // var characterToDelete = currentCharacter.name;
+  for (var i = 0; i < myCharacters.length; i++) {
+    if (myCharacters[i].name == currentCharacter.name) {
+      return i;
+    }
+  }
+  return null;
+}
+
+var deleteCharacter = document.getElementById('delete');
+deleteCharacter.addEventListener('click', handleDeleteClick);
+function handleDeleteClick(){
+  delCharacter();
+  currentCharacter = [];
+  localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+  localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
+  window.location.reload();
 }
