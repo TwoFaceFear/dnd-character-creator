@@ -1,6 +1,8 @@
 'use strict';
 
 var character;
+var timesToRoll = 5;
+var rolls = [];
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
   myCharacters = [];
@@ -21,28 +23,28 @@ function Character(name, race, gender, charClass, align) {
   this.charisma = 0;
 }
 
-Character.prototype.setStrength = function() {
-  this.strength += rollDice();
+Character.prototype.setStrength = function(num) {
+  this.strength = num;
 };
 
-Character.prototype.setDexterity = function() {
-  this.dexterity += rollDice();
+Character.prototype.setDexterity = function(num) {
+  this.dexterity = num;
 };
 
-Character.prototype.setConstitution = function() {
-  this.constitution += rollDice();
+Character.prototype.setConstitution = function(num) {
+  this.constitution = num;
 };
 
-Character.prototype.setIntelligence = function() {
-  this.intelligence += rollDice();
+Character.prototype.setIntelligence = function(num) {
+  this.intelligence = num;
 };
 
-Character.prototype.setWisdom = function() {
-  this.wisdom += rollDice();
+Character.prototype.setWisdom = function(num) {
+  this.wisdom = num;
 };
 
-Character.prototype.setCharisma = function() {
-  this.charisma += rollDice();
+Character.prototype.setCharisma = function(num) {
+  this.charisma = num;
 };
 
 
@@ -61,15 +63,18 @@ function handleSubmitClick() {
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
 
 
-  document.location.href = 'display.html';
+  //document.location.href = 'display.html';
 }
 
-function rollDice() {
-  var total = 0;
-  for(var i = 0; i < 5; i++) {
-    total += Math.floor(Math.random() * 6 + 1);
+function rollDice(numRolls) {
+  for(var i = 0; i < numRolls; i++) {
+    var total = 0;
+    for(var j = 0; j < 5; j++) {
+      total += Math.floor(Math.random() * 6 + 1);
+    }
+    rolls[i] = total;
   }
-  return total;
+  return rolls;
 }
 
 function generateCharacter() {
@@ -84,15 +89,39 @@ function generateCharacter() {
   raceAttributes(race);
   console.log(character.strength);
 
-  character.setWisdom();
+  setAttributes();
+
+  myCharacters.push(character);
+  return character;
+}
+
+function setAttributes() {
+  var attributes = ['Strength', 'Dexterity', 'Intelligence', 'Charisma', 'Wisdom', 'Constitution'];
+  rollDice(timesToRoll);
+
+  var div = document.getElementById('attributes-div');
+  var sel;
+  for (var j = 0; j < rolls.length; j++) {
+    sel = document.createElement('select');
+    sel.setAttribute('name', 'roll ' + (j+1));
+    var opt;
+    for(var i = 0; i < rolls.length; i++) {
+      opt = document.createElement('option');
+      opt.setAttribute('value', attributes[i]);
+      opt.textContent = attributes[i];
+      sel.appendChild(opt);
+    }
+    div.appendChild(sel);
+  }
+  //create drop downs that are associated with index of rolls[]
+  //get roll from array
+  //pass value to set attribute
+  character.setWisdom(rolls[0]);
   character.setCharisma();
   character.setStrength();
   character.setDexterity();
   character.setIntelligence();
   character.setConstitution();
-
-  myCharacters.push(character);
-  return character;
 }
 
 function getClass(){
