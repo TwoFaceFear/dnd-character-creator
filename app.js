@@ -3,7 +3,6 @@
 var character;
 var timesToRoll = 6;
 var rolls = [];
-var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
   myCharacters = [];
@@ -60,11 +59,6 @@ function main() {
 
 function handleSubmitClick() {
   generateCharacter();
-
-  localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
-
-
-  //document.location.href = 'display.html';
 }
 
 function rollDice(numRolls) {
@@ -131,13 +125,22 @@ function renderAttributesTable() {
 
     attributesDiv.appendChild(rollDiv);
   }
+  var sbmtDiv = document.createElement('div');
+  sbmtDiv.innerHTML = '<h3>SUBMIT</h3>';
+  sbmtDiv.addEventListener('click', handleSbmtDivClick);
+  rollDiv.appendChild(sbmtDiv);
+}
 
-  // character.setWisdom();
-  // character.setCharisma();
-  // character.setStrength();
-  // character.setDexterity();
-  // character.setIntelligence();
-  // character.setConstitution();
+function handleSbmtDivClick() {
+  character.setStrength(rolls[0]);
+  character.setDexterity(rolls[1]);
+  character.setIntelligence(rolls[2]);
+  character.setCharisma(rolls[3]);
+  character.setWisdom(rolls[4]);
+  character.setConstitution(rolls[5]);
+
+  localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+  document.location.href = 'display.html';
 }
 
 function handleUpClick() {
@@ -149,17 +152,13 @@ function handleUpClick() {
 
 function handleDwnClick() {
   var indexA = event.target.parentElement.parentElement.getAttribute('roll-index');
-  console.log('index a before', indexA);
   indexA = parseInt(indexA);
   swapRolls(indexA, indexA + 1);
   renderAttributesTable();
 }
 
 function swapRolls(indexA, indexB) {
-  console.log('indexA', indexA);
-  console.log('indexB', indexB);
   var tmp = rolls[indexA];
-  console.log('rolls', rolls);
   rolls[indexA] = rolls[indexB];
   rolls[indexB] = tmp;
 }
