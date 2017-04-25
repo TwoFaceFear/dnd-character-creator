@@ -1,4 +1,4 @@
-var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
+var myCharacters = JSON.parse(localStorage.myCharacters);
 var lastIndex = myCharacters.length -1;
 renderCharacter(myCharacters[lastIndex]);
 
@@ -40,4 +40,26 @@ function renderCharacter(char) {
 
   el = document.getElementById('display-charisma-li');
   el.innerHTML = el.innerHTML + char.charisma;
+
+  el = document.getElementById('delete');
+  el.addEventListener('click', handleDeleteClick);
+}
+
+function handleDeleteClick() {
+  delCharacter(myCharacters[lastIndex]);
+}
+
+function delCharacter(){
+  var index = findCharacter();
+  myCharacters.splice(index, myCharacters.length -1);
+}
+
+function findCharacter(){
+  var characterToDelete = prompt('What character do you want to delete?');
+  for (var i = 0; i < myCharacters.length; i++) {
+    if (myCharacters[i].name == characterToDelete) {
+      return i;
+    }
+  }
+  return null;
 }
