@@ -14,6 +14,10 @@
     background: #63605d;
     height: 100px;
   }
+
+  #display-list {
+    list-style-image: arrow22.png;
+  }
 /*
 orange: rgb(255, 83, 13);
   hsla(17, 100%, 53%, 1);
