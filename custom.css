@@ -13,6 +13,13 @@
   display: block;
 }
 
+#logo {
+  margin: 0;
+  height: 156px;
+  width: 187px;
+  display: block;
+}
+
 header {
   width: 100%;
   height: 200px;
@@ -48,10 +55,15 @@ body {
   color: hsla(30, 2%, 18%, 1);
 }
 
+#basicInfo {
+  margin-top: 6px;
+}
+
 #rolls {
   width: 120px;
   margin-top: 6px;
 }
+
 .rolls {
   width: 130px;
   display-type: block;
@@ -62,9 +74,6 @@ body {
   margin-top: 6px;
 }
 
-#basicInfo {
-  margin-top: 6px;
-}
 
 #charPic{
   width: auto;
@@ -84,11 +93,4 @@ body {
 
 #inches{
   width: 49%;
-}
-
-#logo {
-  margin: 0;
-  height: 156px;
-  width: 187px;
-  display: block;
 }
