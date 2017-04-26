@@ -52,6 +52,7 @@ Character.prototype.setCharisma = function(num) {
   this.charisma = num;
 };
 
+
 function main() {
 
   var submit = document.getElementById('submit');
@@ -189,6 +190,30 @@ function swapRolls(indexA, indexB) {
   var tmp = rolls[indexA];
   rolls[indexA] = rolls[indexB];
   rolls[indexB] = tmp;
+}
+
+function getHeightFeet() {
+  var feet = document.getElementById('feet').value;
+  return feet;
+}
+
+function getHeightInches() {
+  var inches = document.getElementById('inches').value;
+  return inches;
+}
+
+function getWeight() {
+  var weight = document.getElementById('weight').value;
+  return weight;
+}
+
+function getStory() {
+  var story = document.getElementById('characterStory').value;
+  return story;
+}
+
+function getLooks() {
+  var looks = document.getElementById('looks').value;
 }
 
 function getClass(){
