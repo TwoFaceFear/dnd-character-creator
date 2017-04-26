@@ -47,6 +47,12 @@ function renderCharacter(char) {
 
   el = document.getElementById('display-charisma-li');
   el.innerHTML = el.innerHTML + char.charisma;
+
+  var img = document.getElementById('display-img-class');
+  img.src = 'assets/' + char.charClass + '.png';
+
+  img = document.getElementById('display-img-race');
+  img.src = 'assets/' + char.race + '.png';
 }
 
 for (var i = 0; i < myCharacters.length; i++){

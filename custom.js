@@ -1,13 +1,22 @@
 'use strict';
 
 var character;
-var currentCharacter;
-var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
+var currentCharacter = [];
+var myCharacters = [];
+var slugbyte = new Character('slugbyte', 'human', 'male', 'wizard', 'chaoticGood');
+currentCharacter.push(slugbyte);
+localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
+myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
 
 if (currentCharacter < 1){
   currentCharacter = myCharacters[0];
 }
+else if (currentCharacter === null){
+  currentCharacter = [];
+}
+
 
 function Character(name, race, gender, charClass, align) {
   this.name = name;

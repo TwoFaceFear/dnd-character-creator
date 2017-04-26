@@ -125,7 +125,6 @@ function generateCharacter() {
     var align = getAlignment();
 
     character = new Character(name, race, gender, charClass, align);
-
     character.setHeightFeet(getHeightFeet());
     character.setHeightInches(getHeightInches());
     character.setWeight(getWeight());

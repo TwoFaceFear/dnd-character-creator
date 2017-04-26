@@ -38,11 +38,10 @@ orange: rgb(255, 83, 13);
 
 */
 
-/*#sidebar {
-  display: block;
-  position: fixed;
-  width: 200px;
-}*/
+img {
+  height: 150px;
+  width: 150px;
+}
 
 a {
   display: block;
