@@ -74,7 +74,26 @@ function rollDice(numRolls) {
   return rolls;
 }
 
+function onlyLetters(nameInput) {
+  //below is a regular expression that represents all upper and lower case letters
+  var alpha = /^[A-Za-z]+$/;
+  if(nameInput.value.match(alpha))
+  {
+    return true;
+  }
+  else
+  {
+    alert('message');
+    return false;
+  }
+}
+
 function generateCharacter() {
+  //this checks that only letters are input for names
+  if(!onlyLetters(document.getElementById('name').value)) {
+    
+    main();
+  }
   var name = document.getElementById('name').value;
   var race = getRace();
   var gender = getGender();
