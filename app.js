@@ -1,7 +1,7 @@
 'use strict';
 
 var character;
-var timesToRoll = 6;
+var timesToRoll; //sets the number of rolls
 var rolls = [];
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
@@ -58,6 +58,8 @@ function main() {
 }
 
 function handleSubmitClick() {
+  var rollInput = document.getElementById('num-rolls-input');
+  timesToRoll = rollInput.value;
   generateCharacter();
 }
 
@@ -101,13 +103,11 @@ function renderAttributesTable() {
     rollDiv = document.createElement('div');
     rollDiv.setAttribute('roll-index', i);
 
-    attDiv = document.createElement('div');
-    attDiv.innerHTML = '<h3>' + attributes[i] + '</h3>';
-    rollDiv.appendChild(attDiv);
-
-    numDiv = document.createElement('div');
-    numDiv.innerHTML = '<p>' + rolls[i] + '</p>';
-    rollDiv.appendChild(numDiv);
+    if(i < 6) {
+      attDiv = document.createElement('div');
+      attDiv.innerHTML = '<h3>' + attributes[i] + '</h3>';
+      rollDiv.appendChild(attDiv);
+    }
 
     if(i > 0) {
       upDiv = document.createElement('div');
@@ -115,6 +115,10 @@ function renderAttributesTable() {
       upDiv.addEventListener('click', handleUpClick);
       rollDiv.appendChild(upDiv);
     }
+
+    numDiv = document.createElement('div');
+    numDiv.innerHTML = '<p>' + rolls[i] + '</p>';
+    rollDiv.appendChild(numDiv);
 
     if(i < rolls.length - 1) {
       dwnDiv = document.createElement('div');
