@@ -34,7 +34,7 @@ header {
   font-size: 70px;
   font-family: 'Caudex', sans-serif;
   padding-bottom: 250px;
-  display: block;
+  display: inline-block;
 }
 
 body {
@@ -43,6 +43,9 @@ body {
 
 .dropdown {
   width: auto;
+  border: hsla(30, 2%, 18%, 1) solid 2px;
+  background-color: hsla(30, 11%, 90%, 1);
+  color: hsla(30, 2%, 18%, 1);
 }
 
 #rolls {
@@ -50,7 +53,7 @@ body {
   margin-top: 6px;
 }
 .rolls {
-  width: 120px;
+  width: 130px;
   display-type: block;
   margin: 2px;
 }
@@ -63,8 +66,24 @@ body {
   margin-top: 6px;
 }
 
+#charPic{
+  width: auto;
+  border: hsla(30, 2%, 18%, 1) solid 2px;
+  background-color: hsla(30, 11%, 90%, 1);
+  color: hsla(30, 2%, 18%, 1);
+}
+
 #height {
   margin-top: 6px;
+}
+
+#feet {
+  width: 49%;
+  margin-left: 2%;
+}
+
+#inches{
+  width: 49%;
 }
 
 #logo {
