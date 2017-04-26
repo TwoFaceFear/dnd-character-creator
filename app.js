@@ -52,6 +52,26 @@ Character.prototype.setCharisma = function(num) {
   this.charisma = num;
 };
 
+Character.prototype.setHeightFeet = function(num) {
+  this.heightFeet = num;
+};
+
+Character.prototype.setHeightInches = function(num) {
+  this.heightInches = num;
+};
+
+Character.prototype.setWeight = function(num) {
+  this.weight = num;
+};
+
+Character.prototype.setStory = function(num) {
+  this.story = num;
+};
+
+Character.prototype.setLooks = function(num) {
+  this.looks = num;
+};
+
 function main() {
 
   var submit = document.getElementById('submit');
@@ -105,6 +125,11 @@ function generateCharacter() {
     var align = getAlignment();
 
     character = new Character(name, race, gender, charClass, align);
+    character.setHeightFeet(getHeightFeet());
+    character.setHeightInches(getHeightInches());
+    character.setWeight(getWeight());
+    character.setStory(getStory());
+    character.setLooks(getLooks());
     raceAttributes(race);
     rollDice(timesToRoll);
     renderAttributesTable();
@@ -189,6 +214,31 @@ function swapRolls(indexA, indexB) {
   var tmp = rolls[indexA];
   rolls[indexA] = rolls[indexB];
   rolls[indexB] = tmp;
+}
+
+function getHeightFeet() {
+  var feet = document.getElementById('feet').value;
+  return feet;
+}
+
+function getHeightInches() {
+  var inches = document.getElementById('inches').value;
+  return inches;
+}
+
+function getWeight() {
+  var weight = document.getElementById('weight').value;
+  return weight;
+}
+
+function getStory() {
+  var story = document.getElementById('characterStory').value;
+  return story;
+}
+
+function getLooks() {
+  var looks = document.getElementById('looks').value;
+  return looks;
 }
 
 function getClass(){
