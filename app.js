@@ -1,7 +1,7 @@
 'use strict';
 
 var character;
-var timesToRoll = 6;
+var timesToRoll; //sets the number of rolls
 var rolls = [];
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
@@ -21,6 +21,11 @@ function Character(name, race, gender, charClass, align) {
   this.intelligence;
   this.wisdom;
   this.charisma;
+  this.heightFeet;
+  this.heightInches;
+  this.weight;
+  this.story;
+  this.looks;
 }
 
 Character.prototype.setStrength = function(num) {
@@ -58,6 +63,8 @@ function main() {
 }
 
 function handleSubmitClick() {
+  var rollInput = document.getElementById('num-rolls-input');
+  timesToRoll = rollInput.value;
   generateCharacter();
 }
 
@@ -72,20 +79,39 @@ function rollDice(numRolls) {
   return rolls;
 }
 
+function onlyLetters(nameInput) {
+  //below is a regular expression that represents all upper and lower case letters
+  var alpha = /^[A-Za-z]+$/;
+  if(nameInput.match(alpha))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
 function generateCharacter() {
   var name = document.getElementById('name').value;
-  var race = getRace();
-  var gender = getGender();
-  var charClass = getClass();
-  var align = getAlignment();
+  //this checks that only letters are input for names
+  if(!onlyLetters(name)) {
+    window.alert('Character name must only contain letters.');
+    location.reload();
+  } else {
+    var race = getRace();
+    var gender = getGender();
+    var charClass = getClass();
+    var align = getAlignment();
 
-  character = new Character(name, race, gender, charClass, align);
-  raceAttributes(race);
-  rollDice(timesToRoll);
-  renderAttributesTable();
-  myCharacters.push(character);
+    character = new Character(name, race, gender, charClass, align);
+    raceAttributes(race);
+    rollDice(timesToRoll);
+    renderAttributesTable();
+    myCharacters.push(character);
 
-  return character;
+    return character;
+  }
 }
 
 function renderAttributesTable() {
@@ -101,13 +127,11 @@ function renderAttributesTable() {
     rollDiv = document.createElement('div');
     rollDiv.setAttribute('roll-index', i);
 
-    attDiv = document.createElement('div');
-    attDiv.innerHTML = '<h3>' + attributes[i] + '</h3>';
-    rollDiv.appendChild(attDiv);
-
-    numDiv = document.createElement('div');
-    numDiv.innerHTML = '<p>' + rolls[i] + '</p>';
-    rollDiv.appendChild(numDiv);
+    if(i < 6) {
+      attDiv = document.createElement('div');
+      attDiv.innerHTML = '<h3>' + attributes[i] + '</h3>';
+      rollDiv.appendChild(attDiv);
+    }
 
     if(i > 0) {
       upDiv = document.createElement('div');
@@ -115,6 +139,10 @@ function renderAttributesTable() {
       upDiv.addEventListener('click', handleUpClick);
       rollDiv.appendChild(upDiv);
     }
+
+    numDiv = document.createElement('div');
+    numDiv.innerHTML = '<p>' + rolls[i] + '</p>';
+    rollDiv.appendChild(numDiv);
 
     if(i < rolls.length - 1) {
       dwnDiv = document.createElement('div');

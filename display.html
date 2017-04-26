@@ -2,6 +2,8 @@
   <html>
     <head>
         <title>Character Display</title>
+        <link href="display.css" rel="stylesheet" style="text/css" />
+
     </head>
     <body>
       <header id="header">
@@ -9,18 +11,19 @@
       <h1>Welcome to Chaotic Creator!</h1>
     </div>
   </header>
-        <div id="sidebarToggle">
-          <input type="checkbox" />
-
-          <span></span>
-          <span></span>
-          <span></span>
-<ul id="sidebar">
-  <li> Test </li>
-  <li> Test2 </li>
-</ul>
-        </div>
-
+<div id="sidebar-toggle">
+  <input type="checkbox" />
+  <span></span>
+  <span></span>
+  <span></span>
+<div id="sidebar">
+  <ul>
+    <li><a href="create.html"><b>Click here to go to the Creation Page</b></a></li>
+    <li><a href="display.html"><b>Click here to Display your Character</b></a></li>
+  </ul>
+</div>
+</div>
+<div class="display-char-info">
       <div id="display-name">
         <h1 id="display-name-h1"></h1>
       </div>
@@ -53,7 +56,7 @@
 
       <!-- this returns user to main page -->
       <h2><a href = "index.html" />Click here to return to Main Page</h2>
-
+</div>
       <script src="app.js"> </script>
       <script src="display.js"></script>
 
