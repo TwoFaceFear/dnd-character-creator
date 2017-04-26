@@ -13,6 +13,12 @@ renderCharacter(currentCharacter);
 function renderCharacter(char) {
   var el;
 
+  el = document.getElementById('display-img-race');
+  el.setAttribute('src', char.race + '.png');
+
+  el = document.getElementById('display-img-Class');
+  el.setAttribute('src', char.class);
+
   el = document.getElementById('display-name-h1');
   el.textContent = char.name;
 

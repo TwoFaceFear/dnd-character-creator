@@ -26,6 +26,7 @@ function Character(name, race, gender, charClass, align) {
   this.weight;
   this.story;
   this.looks;
+  this.image;
 }
 
 Character.prototype.setStrength = function(num) {
@@ -70,6 +71,10 @@ Character.prototype.setStory = function(num) {
 
 Character.prototype.setLooks = function(num) {
   this.looks = num;
+};
+
+Character.prototype.setImage = function(img) {
+  this.image = img;
 };
 
 function main() {
@@ -126,6 +131,7 @@ function generateCharacter() {
 
     character = new Character(name, race, gender, charClass, align);
 
+    character.setImage(getImage());
     character.setHeightFeet(getHeightFeet());
     character.setHeightInches(getHeightInches());
     character.setWeight(getWeight());
@@ -215,6 +221,11 @@ function swapRolls(indexA, indexB) {
   var tmp = rolls[indexA];
   rolls[indexA] = rolls[indexB];
   rolls[indexB] = tmp;
+}
+
+function getImage() {
+  var img = document.getElementById('charPic').value;
+  return img;
 }
 
 function getHeightFeet() {
