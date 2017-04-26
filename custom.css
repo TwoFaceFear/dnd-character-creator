@@ -10,15 +10,20 @@
 #wrapper {
   width: 960px;
   height: 100%;
+  display: block;
 }
 
 header {
   width: 100%;
-  height: 150px;
+  height: 200px;
   font-size: 70px;
-  font-face: 'Aclonica', sans-serif;
   color: hsla(17, 100%, 53%, 1);
   background-color: hsla(30, 2%, 18%, 1);
+}
+
+#page-title {
+  margin: 0;
+  padding: 0;
 }
 
 #header-wrapper {
@@ -28,6 +33,8 @@ header {
   padding-top: 25px;
   font-size: 70px;
   font-family: 'Caudex', sans-serif;
+  padding-bottom: 250px;
+  display: block;
 }
 
 body {
@@ -54,4 +61,15 @@ body {
 
 #basicInfo {
   margin-top: 6px;
+}
+
+#height {
+  margin-top: 6px;
+}
+
+#logo {
+  margin: 0;
+  height: 156px;
+  width: 187px;
+  display: block;
 }
