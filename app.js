@@ -52,6 +52,25 @@ Character.prototype.setCharisma = function(num) {
   this.charisma = num;
 };
 
+Character.prototype.setHeightFeet = function(num) {
+  this.heightFeet = num;
+};
+
+Character.prototype.setHeightInches = function(num) {
+  this.heightInches = num;
+};
+
+Character.prototype.setWeight = function(num) {
+  this.weight = num;
+};
+
+Character.prototype.setStory = function(num) {
+  this.story = num;
+};
+
+Character.prototype.setLooks = function(num) {
+  this.looks = num;
+};
 
 function main() {
 
@@ -106,6 +125,11 @@ function generateCharacter() {
     var align = getAlignment();
 
     character = new Character(name, race, gender, charClass, align);
+    character.setHeightFeet(getHeightFeet());
+    character.setHeightInches(getHeightInches());
+    character.setWeight(getWeight());
+    character.setStory(getStory());
+    character.setLooks(getLooks());
     raceAttributes(race);
     rollDice(timesToRoll);
     renderAttributesTable();
@@ -214,6 +238,7 @@ function getStory() {
 
 function getLooks() {
   var looks = document.getElementById('looks').value;
+  return looks;
 }
 
 function getClass(){
