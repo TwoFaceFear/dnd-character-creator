@@ -224,6 +224,7 @@ function raceAttributes(race){
   }
 }
 
+<<<<<<< HEAD
 function renderCharacter(char) {
   var el;
 
@@ -279,4 +280,6 @@ function findCharacter(){
   return null;
 }
 
+=======
+>>>>>>> 37bea81122258d51b879a811ff3f880aa215d39c
 main();
