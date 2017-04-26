@@ -52,6 +52,7 @@ body {
   overflow: scroll;
   background-color: #e8e5e2;
   position: relative;
+margin-bottom:  auto;
 }
 
 
@@ -61,14 +62,14 @@ body {
   width: 100%;
   background: #2e2d2c;
   text-align: center;
-  padding: 4px 0;
   color: #FF530D;
   bottom: 0;
   position: fixed;
+  margin-top: auto;
 }
 #footer p {
   font-weight: normal;
-  margin-top: 50%;
+  margin-top: 75%;
   margin: 0;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
 }
