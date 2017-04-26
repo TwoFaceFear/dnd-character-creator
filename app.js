@@ -91,7 +91,7 @@ function handleSubmitClick() {
 function rollDice(numRolls) {
   for(var i = 0; i < numRolls; i++) {
     var total = 0;
-    for(var j = 0; j < 5; j++) {
+    for(var j = 0; j < 3; j++) {
       total += Math.floor(Math.random() * 6 + 1);
     }
     rolls[i] = total;
