@@ -71,12 +71,6 @@ main {
   position: fixed;
   width: auto;
 }
-
-#nav {
-  float: left;
-  width: 230px;
-  background: #63605d;
-}
 #content {
   width: 960px;
   font-family: 'Overpass Mono', sans-serif;
@@ -97,23 +91,12 @@ main {
   text-align: center;
 }
 
-#footer {
-  font-family: 'Caudex', serif;
-  clear: left;
-  width: 100%;
-  background: #2e2d2c;
-  text-align: center;
-  padding: 4px 0;
-  color: #FF530D;
-  bottom: 0;
-  position: absolute;
+#nav {
+  float: left;
+  width: 230px;
+  background: #63605d;
 }
-#footer p {
-  font-weight: normal;
-  margin-top: 50%;
-  margin: 0;
-  padding-top: 20px;
-}
+
 
 #wrapper {
   overflow: hidden;
@@ -138,6 +121,24 @@ nav ul {
 nav ul a {
   color: black;
   text-decoration: none;
+}
+
+#footer {
+  font-family: 'Caudex', serif;
+  clear: left;
+  width: 100%;
+  background: #2e2d2c;
+  text-align: center;
+  padding: 4px 0;
+  color: #FF530D;
+  bottom: 0;
+  position: absolute;
+}
+#footer p {
+  font-weight: normal;
+  margin-top: 50%;
+  margin: 0;
+  padding-top: 20px;
 }
 
 #hamburger-toggle{
