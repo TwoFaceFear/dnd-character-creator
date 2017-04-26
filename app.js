@@ -1,7 +1,7 @@
 'use strict';
 
 var character;
-var timesToRoll = 10; //sets the number of rolls
+var timesToRoll; //sets the number of rolls
 var rolls = [];
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
@@ -58,6 +58,8 @@ function main() {
 }
 
 function handleSubmitClick() {
+  var rollInput = document.getElementById('num-rolls-input');
+  timesToRoll = rollInput.value;
   generateCharacter();
 }
 

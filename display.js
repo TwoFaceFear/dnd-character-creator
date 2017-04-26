@@ -1,3 +1,5 @@
+'use strict';
+
 var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
