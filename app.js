@@ -24,6 +24,8 @@ function Character(name, race, gender, charClass, align) {
   this.heightFeet;
   this.heightInches;
   this.weight;
+  this.story;
+  this.looks;
 }
 
 Character.prototype.setStrength = function(num) {
