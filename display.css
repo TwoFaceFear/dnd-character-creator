@@ -1,15 +1,32 @@
 * {
   width: 100%;
-  /*margin: 0 auto;*/
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: normal;
   font-family: 'Overpass', sans-serif;
   font-size: 20px;
 }
-  #header {
-    background: #63605d;
-    height: 100px;
+
+#wrapper {
+  width: 960px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.chaoticClass h1 {
+  font-family: 'Caudex', sans-serif;
+  font-size: 70px;
+}
+
+  header {
+    margin: 0;
+    width: 100%;
+    background: #2e2d2c;
+    height: 200px;
     text-align: center;
+    color: #FF530D;
+    font: 'Caudex', sans-serif;
   }
 
   .chaoticClass {
@@ -17,8 +34,25 @@
   }
 
   #display-list {
-    list-style-image: arrow22.png;
+    text-align: left;
+    width:  200px;
+    margin: 0 auto;
   }
+
+  .dl-li {
+    list-style: none;
+  }
+
+  .dl-li:before{
+    content: '';
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-image: url(assets/arrow22.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
 /*
 orange: rgb(255, 83, 13);
   hsla(17, 100%, 53%, 1);
@@ -167,7 +201,7 @@ font-size: 30;
 {
   position: absolute;
   width: 300px;
-  margin: -37px 0 0 -10px;
+  margin: -136px 0 0 42px;
   padding: 50px;
   padding-top: 125px;
   height: 700px;
