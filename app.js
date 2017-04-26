@@ -21,6 +21,11 @@ function Character(name, race, gender, charClass, align) {
   this.intelligence;
   this.wisdom;
   this.charisma;
+  this.heightFeet;
+  this.heightInches;
+  this.weight;
+  this.story;
+  this.looks;
 }
 
 Character.prototype.setStrength = function(num) {
@@ -74,20 +79,39 @@ function rollDice(numRolls) {
   return rolls;
 }
 
+function onlyLetters(nameInput) {
+  //below is a regular expression that represents all upper and lower case letters
+  var alpha = /^[A-Za-z]+$/;
+  if(nameInput.match(alpha))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
 function generateCharacter() {
   var name = document.getElementById('name').value;
-  var race = getRace();
-  var gender = getGender();
-  var charClass = getClass();
-  var align = getAlignment();
+  //this checks that only letters are input for names
+  if(!onlyLetters(name)) {
+    window.alert('Character name must only contain letters.');
+    location.reload();
+  } else {
+    var race = getRace();
+    var gender = getGender();
+    var charClass = getClass();
+    var align = getAlignment();
 
-  character = new Character(name, race, gender, charClass, align);
-  raceAttributes(race);
-  rollDice(timesToRoll);
-  renderAttributesTable();
-  myCharacters.push(character);
+    character = new Character(name, race, gender, charClass, align);
+    raceAttributes(race);
+    rollDice(timesToRoll);
+    renderAttributesTable();
+    myCharacters.push(character);
 
-  return character;
+    return character;
+  }
 }
 
 function renderAttributesTable() {
