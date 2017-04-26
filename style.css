@@ -9,23 +9,18 @@
 orange: rgb(255, 83, 13);
   hsla(17, 100%, 53%, 1);
   #FF530D;
-
   dark gray: rgb(46, 45, 44);
   hsla(30, 2%, 18%, 1);
   #2e2d2c;
-
   gray: rgb(99, 96, 93);
   hsla(30, 3%, 38%, 1);
   #63605d;
-
   accent gray(light): rgb(232, 229, 226);
   hsla(30, 11%, 90%, 1);
   #e8e5e2;
-
   off white: rgb(245, 242, 239);
   hsla(30, 23%, 95%, 1);
   #f5f2ef;
-
 */
 
 body {
@@ -36,10 +31,11 @@ body {
 }
 
 #header {
-  font-family: 'Amaranth', sans-serif;
-  background: #ccc;
+  font-family: 'Caudex', serif;
+  background: #2e2d2c;
   height: 100px;
   text-align: center;
+  color: #FF530D;
 }
 
 #header h1 {
@@ -64,11 +60,13 @@ main {
 }
 
 #footer {
+  font-family: 'Caudex', serif;
   clear: left;
   width: 100%;
-  background: #ccc;
+  background: #2e2d2c;
   text-align: center;
   padding: 4px 0;
+  color: #FF530D;
 }
 
 #wrapper {
@@ -77,6 +75,7 @@ main {
 
 #content {
   margin-left: 230px; /* Same as 'nav' width */
+  padding-top: 5px;
 }
 
 .chaoticClass {
@@ -84,9 +83,9 @@ main {
   margin-top: 0;
 }
 
-p {
+/*p {
   color: #555;
-}
+}*/
 
 nav ul {
   list-style-type: none;
