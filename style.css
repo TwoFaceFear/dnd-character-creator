@@ -106,6 +106,5 @@ nav ul a {
 
   z-index: 1;
 
-  -webkit-user-select: none;
   user-select: none;
 }
