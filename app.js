@@ -1,7 +1,7 @@
 'use strict';
 
 var character;
-var timesToRoll = 6;
+var timesToRoll; //sets the number of rolls
 var rolls = [];
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
@@ -21,6 +21,11 @@ function Character(name, race, gender, charClass, align) {
   this.intelligence;
   this.wisdom;
   this.charisma;
+  this.heightFeet;
+  this.heightInches;
+  this.weight;
+  this.story;
+  this.looks;
 }
 
 Character.prototype.setStrength = function(num) {
@@ -47,6 +52,26 @@ Character.prototype.setCharisma = function(num) {
   this.charisma = num;
 };
 
+Character.prototype.setHeightFeet = function(num) {
+  this.heightFeet = num;
+};
+
+Character.prototype.setHeightInches = function(num) {
+  this.heightInches = num;
+};
+
+Character.prototype.setWeight = function(num) {
+  this.weight = num;
+};
+
+Character.prototype.setStory = function(num) {
+  this.story = num;
+};
+
+Character.prototype.setLooks = function(num) {
+  this.looks = num;
+};
+
 function main() {
 
   var submit = document.getElementById('submit');
@@ -58,6 +83,8 @@ function main() {
 }
 
 function handleSubmitClick() {
+  var rollInput = document.getElementById('num-rolls-input');
+  timesToRoll = rollInput.value;
   generateCharacter();
 }
 
@@ -72,20 +99,44 @@ function rollDice(numRolls) {
   return rolls;
 }
 
+function onlyLetters(nameInput) {
+  //below is a regular expression that represents all upper and lower case letters
+  var alpha = /^[A-Za-z]+$/;
+  if(nameInput.match(alpha))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
 function generateCharacter() {
   var name = document.getElementById('name').value;
-  var race = getRace();
-  var gender = getGender();
-  var charClass = getClass();
-  var align = getAlignment();
+  //this checks that only letters are input for names
+  if(!onlyLetters(name)) {
+    window.alert('Character name must only contain letters.');
+    location.reload();
+  } else {
+    var race = getRace();
+    var gender = getGender();
+    var charClass = getClass();
+    var align = getAlignment();
 
-  character = new Character(name, race, gender, charClass, align);
-  raceAttributes(race);
-  rollDice(timesToRoll);
-  renderAttributesTable();
-  myCharacters.push(character);
+    character = new Character(name, race, gender, charClass, align);
+    character.setHeightFeet(getHeightFeet());
+    character.setHeightInches(getHeightInches());
+    character.setWeight(getWeight());
+    character.setStory(getStory());
+    character.setLooks(getLooks());
+    raceAttributes(race);
+    rollDice(timesToRoll);
+    renderAttributesTable();
+    myCharacters.push(character);
 
-  return character;
+    return character;
+  }
 }
 
 function renderAttributesTable() {
@@ -101,13 +152,11 @@ function renderAttributesTable() {
     rollDiv = document.createElement('div');
     rollDiv.setAttribute('roll-index', i);
 
-    attDiv = document.createElement('div');
-    attDiv.innerHTML = '<h3>' + attributes[i] + '</h3>';
-    rollDiv.appendChild(attDiv);
-
-    numDiv = document.createElement('div');
-    numDiv.innerHTML = '<p>' + rolls[i] + '</p>';
-    rollDiv.appendChild(numDiv);
+    if(i < 6) {
+      attDiv = document.createElement('div');
+      attDiv.innerHTML = '<h3>' + attributes[i] + '</h3>';
+      rollDiv.appendChild(attDiv);
+    }
 
     if(i > 0) {
       upDiv = document.createElement('div');
@@ -115,6 +164,10 @@ function renderAttributesTable() {
       upDiv.addEventListener('click', handleUpClick);
       rollDiv.appendChild(upDiv);
     }
+
+    numDiv = document.createElement('div');
+    numDiv.innerHTML = '<p>' + rolls[i] + '</p>';
+    rollDiv.appendChild(numDiv);
 
     if(i < rolls.length - 1) {
       dwnDiv = document.createElement('div');
@@ -161,6 +214,31 @@ function swapRolls(indexA, indexB) {
   var tmp = rolls[indexA];
   rolls[indexA] = rolls[indexB];
   rolls[indexB] = tmp;
+}
+
+function getHeightFeet() {
+  var feet = document.getElementById('feet').value;
+  return feet;
+}
+
+function getHeightInches() {
+  var inches = document.getElementById('inches').value;
+  return inches;
+}
+
+function getWeight() {
+  var weight = document.getElementById('weight').value;
+  return weight;
+}
+
+function getStory() {
+  var story = document.getElementById('characterStory').value;
+  return story;
+}
+
+function getLooks() {
+  var looks = document.getElementById('looks').value;
+  return looks;
 }
 
 function getClass(){
@@ -224,62 +302,4 @@ function raceAttributes(race){
   }
 }
 
-<<<<<<< HEAD
-function renderCharacter(char) {
-  var el;
-
-  el = document.getElementById('display-name-h1');
-  el.textContent = char.name;
-
-  el = document.getElementById('display-race-h2');
-  el.textContent = char.race;
-
-  el = document.getElementById('display-class-h2');
-  el.textContent = char.charClass;
-
-  el = document.getElementById('display-gender-h2');
-  el.textContent = char.gender;
-
-  el = document.getElementById('display-size-h2');
-  el.textContent = char.size;
-
-  el = document.getElementById('display-align-h2');
-  el.textContent = char.align;
-
-  el = document.getElementById('display-strength-li');
-  el.innerHTML = el.innerHTML + char.strength;
-
-  el = document.getElementById('display-dexterity-li');
-  el.innerHTML = el.innerHTML + char.dexterity;
-
-  el = document.getElementById('display-constitution-li');
-  el.innerHTML = el.innerHTML + char.constitution;
-
-  el = document.getElementById('display-intelligence-li');
-  el.innerHTML = el.innerHTML + char.intelligence;
-
-  el = document.getElementById('display-wisdom-li');
-  el.innerHTML = el.innerHTML + char.wisdom;
-
-  el = document.getElementById('display-charisma-li');
-  el.innerHTML = el.innerHTML + char.charisma;
-}
-
-function delCharacter(){
-  var index = findCharacter();
-  myCharacters.splice(index, 1);
-}
-
-function findCharacter(){
-  var characterToDelete = prompt('What character do you want to delete?');
-  for (var i = 0; i < myCharacters.length; i++) {
-    if (myCharacters[i].name == characterToDelete) {
-      return i;
-    }
-  }
-  return null;
-}
-
-=======
->>>>>>> 37bea81122258d51b879a811ff3f880aa215d39c
 main();
