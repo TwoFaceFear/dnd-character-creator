@@ -12,7 +12,6 @@
 #wrapper {
   /*width: 960px;*/
   height: 100%;
-<<<<<<< HEAD
   display: block;
 }
 
@@ -21,9 +20,7 @@
   height: 156px;
   width: 187px;
   display: block;
-=======
   text-align: center;
->>>>>>> e51d80b58b15703e60e1696a794706d44e0d7931
 }
 
 header {

@@ -13,11 +13,11 @@ html {
   background-repeat: no-repeat;
   background-image: url(assets/Dragons.png);
 }
-  #header {
-    background: #63605d;
-    height: 100px;
-    text-align: center;
-  }
+#header {
+  background: #63605d;
+  height: 100px;
+  text-align: center;
+}
 
 #wrapper {
   width: 960px;
@@ -150,9 +150,9 @@ a:hover {
 
 
 /*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+* Transform all the slices of hamburger
+* into a crossmark.
+*/
 
 #sidebar-toggle input:checked~span {
   opacity: 1;
@@ -162,8 +162,8 @@ a:hover {
 
 
 /*
- * But let's hide the middle one.
- */
+* But let's hide the middle one.
+*/
 
 #sidebar-toggle input:checked~span:nth-last-child(3) {
   opacity: 0;
@@ -172,8 +172,8 @@ a:hover {
 
 
 /*
- * Ohyeah and the last one should go the other direction
- */
+* Ohyeah and the last one should go the other direction
+*/
 
 #sidebar-toggle input:checked~span:nth-last-child(2) {
   opacity: 1;
@@ -182,9 +182,9 @@ a:hover {
 
 
 /*
- * Make this absolute positioned
- * at the top left of the screen
- */
+* Make this absolute positioned
+* at the top left of the screen
+*/
 
 #sidebar {
   position: fixed;
@@ -210,8 +210,8 @@ a:hover {
 
 
 /*
- * And let's fade it in from the left
- */
+* And let's fade it in from the left
+*/
 
 #sidebar-toggle input:checked~div {
   transform: scale(1.0, 1.0);
@@ -250,9 +250,3 @@ hsla(30, 23%, 95%, 1);
 #f5f2ef;
 
 */
-
-
-#temp {
-  height: 3000px;
-  font-size: 1000px;
-}
