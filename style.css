@@ -24,6 +24,9 @@ hsla(30, 23%, 95%, 1);
 */
 
 body, html {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(assets/Dragons.png);
   position: fixed;
   margin:0;
   padding:0;

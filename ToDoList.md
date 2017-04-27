@@ -18,6 +18,11 @@ DAY 3 goals:
   integrate custom.html
   insert logo
 
+DAY 4 goals:
+  finish any JS we are working on
+  indentations and semicolons(cheat mode, use stuff)
+  CSS
+
 2: finish product
 
 
