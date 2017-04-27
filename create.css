@@ -58,10 +58,11 @@ body {
   margin: 0;
 }
 #createfields{
+  width: 960px;
   overflow: scroll;
   background-color: #e8e5e2;
   position: relative;
-margin-bottom:  auto;
+  margin-bottom:  auto;
 }
 
 
