@@ -12,16 +12,31 @@
 #wrapper {
   /*width: 960px;*/
   height: 100%;
+<<<<<<< HEAD
+  display: block;
+}
+
+#logo {
+  margin: 0;
+  height: 156px;
+  width: 187px;
+  display: block;
+=======
   text-align: center;
+>>>>>>> e51d80b58b15703e60e1696a794706d44e0d7931
 }
 
 header {
   width: 100%;
-  height: 150px;
+  height: 200px;
   font-size: 70px;
-  font-face: 'Aclonica', sans-serif;
   color: hsla(17, 100%, 53%, 1);
   background-color: hsla(30, 2%, 18%, 1);
+}
+
+#page-title {
+  margin: 0;
+  padding: 0;
 }
 
 #header-wrapper {
@@ -31,6 +46,8 @@ header {
   padding-top: 25px;
   font-size: 70px;
   font-family: 'Caudex', sans-serif;
+  padding-bottom: 250px;
+  display: inline-block;
 }
 
 body {
@@ -39,14 +56,22 @@ body {
 
 .dropdown {
   width: auto;
+  border: hsla(30, 2%, 18%, 1) solid 2px;
+  background-color: hsla(30, 11%, 90%, 1);
+  color: hsla(30, 2%, 18%, 1);
+}
+
+#basicInfo {
+  margin-top: 6px;
 }
 
 #rolls {
   width: 120px;
   margin-top: 6px;
 }
+
 .rolls {
-  width: 120px;
+  width: 130px;
   display-type: block;
   margin: 2px;
 }
@@ -55,10 +80,28 @@ body {
   margin-top: 6px;
 }
 
-#basicInfo {
+
+#charPic{
+  width: auto;
+  border: hsla(30, 2%, 18%, 1) solid 2px;
+  background-color: hsla(30, 11%, 90%, 1);
+  color: hsla(30, 2%, 18%, 1);
+}
+
+#height {
   margin-top: 6px;
 }
 
+<<<<<<< HEAD
+#feet {
+  width: 49%;
+  margin-left: 2%;
+}
+
+#inches{
+  width: 49%;
+}
+=======
 /* The side bar */
 
 #sidebar-toggle{
@@ -190,3 +233,4 @@ body {
 }
 
 /* End side bar */
+>>>>>>> e51d80b58b15703e60e1696a794706d44e0d7931

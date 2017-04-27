@@ -58,7 +58,12 @@ img {
   width: 150px;
 }
 
-a {
+
+.display-char-info {
+  text-align: center;
+}
+
+a, #sidebar ul li {
   display: block;
   text-decoration: none;
   color: #e8e5e2;
@@ -70,15 +75,15 @@ a:hover {
 }
 
 .characters {
-  padding: 10px;
   font-size: 30;
   list-style: none;
+  margin-left: 5px;
 }
 
 .characters:before {
   content: '';
   display: inline-block;
-  height: 1em;
+  height: 15px;
   width: 1em;
   background-image: url(assets/arrow22.png);
   background-size: contain;
@@ -86,15 +91,11 @@ a:hover {
 }
 
 
-.display-char-info {
-  text-align: center;
-}
-
 #sidebar-toggle {
   display: block;
-  position: relative;
-  top: -90px;
-  left: 10px;
+  position: fixed;
+  top: 9px;
+  left: 8px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -136,11 +137,7 @@ a:hover {
   transform-origin: 0% 100%;
 }
 
-
-/*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+/* Transform all the slices of hamburger into a crossmark.*/
 
 #sidebar-toggle input:checked~span {
   opacity: 1;
@@ -148,39 +145,29 @@ a:hover {
   background: #232323;
 }
 
-
-/*
- * But let's hide the middle one.
- */
+/* But let's hide the middle one. */
 
 #sidebar-toggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-
-/*
- * Ohyeah and the last one should go the other direction
- */
+/* Ohyeah and the last one should go the other direction */
 
 #sidebar-toggle input:checked~span:nth-last-child(2) {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
+/* Make this absolute positioned at the top left of the screen */
 
 #sidebar {
   position: fixed;
   width: 300px;
   margin: -136px 0 0 42px;
-  padding: 50px;
+  /*padding: 50px;*/
   padding-top: 125px;
-  height: 1000px;
+  height: 1200px;
   background: #63605d;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -190,15 +177,14 @@ a:hover {
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
-#sidebar a {
-  padding: 10px;
-  font-size: 22px;
+#sidebar a, #sidebar ul li {
+  /*padding: 10px;*/
+  margin-top:10px;
+  font-size: 20px;
+  width: 182px;
 }
 
-
-/*
- * And let's fade it in from the left
- */
+/* And let's fade it in from the left */
 
 #sidebar-toggle input:checked~div {
   transform: scale(1.0, 1.0);
@@ -214,6 +200,9 @@ a:hover {
   margin: 0;
 }
 
+#sidebar ul li.nth-child(2){
+  text-decoration: underline;
+}
 
 /*
 orange: rgb(255, 83, 13);
