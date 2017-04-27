@@ -3,12 +3,13 @@
 var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
-// 
+//
 // if (currentCharacter < 1){
 //   currentCharacter = myCharacters[0];
 // }
 
 renderCharacter(currentCharacter);
+renderSkills();
 function renderCharacter(char) {
   var el;
 
@@ -53,6 +54,32 @@ function renderCharacter(char) {
 
   img = document.getElementById('display-img-race');
   img.src = 'assets/' + char.race + '.png';
+}
+
+function renderSkills() {
+
+}
+
+function calcSkillModifier(roll) {
+  var mod;
+  if(roll === 18){
+    mod = 4;
+  } else if (roll > 15) {
+    mod = 3;
+  } else if (roll > 13) {
+    mod = 2;
+  } else if (roll > 11) {
+    mod = 1;
+  } else if (roll > 9) {
+    mod = 0;
+  } else if (roll > 7) {
+    mod = -1;
+  } else if (roll > 5) {
+    mod = -2;
+  } else {
+    mod = -3;
+  }
+  return mod;
 }
 
 for (var i = 0; i < myCharacters.length; i++){

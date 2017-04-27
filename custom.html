@@ -8,6 +8,7 @@
     <body>
       <header>
         <div id="header-wrapper">
+          <img src="assets/chaotic-creator-logo.png" id="logo" />
           Chaotic Creator
         </div>
       </header>
@@ -27,8 +28,8 @@
       </div>
 
       <h1 id="page-title">Create New Custom Character</h1>
-      <div id="wrapper">
 
+      <div id="wrapper">
         <div id="basicInfo">Basic Information
           <input type="text" placeholder="name" name="name" id="name" />
 
@@ -78,16 +79,18 @@
             <option vlue="large">Large</option>
           </select>
 
-          <div id="height">Height
-            <input type="text" placeholder="feet" id="feet" />
+          <div id="height">
+            <h3>Height</h3>
+            <input type="number" placeholder="feet" id="feet" />
 
-            <input type="text" placeholder="inches" id="inches" />
+            <input type="number" placeholder="inches" id="inches" />
           </div>
         </div>
 
-        <input type="text" placeholder="weight" id="weight" />
+        <input type="number" placeholder="weight" id="weight" />
 
         <div id="rolls">Rolls
+
           <input type="text" placeholder="strength" class="rolls" id="strength"/>
 
           <input type="text" placeholder="dexterity" class="rolls" id="dexterity"/>
@@ -99,6 +102,7 @@
           <input type="text" placeholder="wisdom" class="rolls" id="wisdom"/>
 
           <input type="text" placeholder="charisma" class="rolls" id="charisma" />
+
         </div>
 
         <div id="charStory">Character Story
@@ -107,6 +111,7 @@
         <div id="charLooks">Looks
           <textarea id="looks"></textarea>
         </div>
+
         <button type="button" id="submit">Submit!</button>
       </div>
 
