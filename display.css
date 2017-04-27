@@ -148,6 +148,7 @@ a:hover {
   transform-origin: 0% 100%;
 }
 
+
 /* Transform all the slices of hamburger into a crossmark.*/
 
 #sidebar-toggle input:checked~span {
@@ -156,6 +157,7 @@ a:hover {
   background: #232323;
 }
 
+
 /* But let's hide the middle one. */
 
 #sidebar-toggle input:checked~span:nth-last-child(3) {
@@ -163,12 +165,14 @@ a:hover {
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
+
 /* Ohyeah and the last one should go the other direction */
 
 #sidebar-toggle input:checked~span:nth-last-child(2) {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
+
 
 /* Make this absolute positioned at the top left of the screen */
 
@@ -192,6 +196,7 @@ a:hover {
   font-size: 20px;
   width: 182px;
 }
+
 
 /* And let's fade it in from the left */
 
