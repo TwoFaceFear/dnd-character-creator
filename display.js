@@ -70,6 +70,276 @@ function renderSkills() {
   td = document.createElement('td');
   td.textContent = int;
   tr.appendChild(td);
+
+  tr = document.getElementById('autohypnosis-tr');
+  td = document.createElement('td');
+  td.textContent = wis;
+  tr.appendChild(td);
+
+  tr = document.getElementById('balance-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
+
+  tr = document.getElementById('bluff-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('climb-tr');
+  td = document.createElement('td');
+  td.textContent = str;
+  tr.appendChild(td);
+
+  tr = document.getElementById('concentration-tr');
+  td = document.createElement('td');
+  td.textContent = con;
+  tr.appendChild(td);
+
+  tr = document.getElementById('craft-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('decipher-script-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('diplomacy-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('disable-device-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('disguise-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('escape-artist-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
+
+  tr = document.getElementById('forgery-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('gather-information-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('handle-animal-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('heal-tr');
+  td = document.createElement('td');
+  td.textContent = wis;
+  tr.appendChild(td);
+
+  tr = document.getElementById('hide-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
+
+  tr = document.getElementById('intimidate-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('jump-tr');
+  td = document.createElement('td');
+  td.textContent = str;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-arcana-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-arch-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-dungeoneering-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-geography-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-history-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-local-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-nature-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-nobility-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-planes-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-psionics-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('knowledge-religion-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('listen-tr');
+  td = document.createElement('td');
+  td.textContent = wis;
+  tr.appendChild(td);
+
+  tr = document.getElementById('move-silently-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
+
+  tr = document.getElementById('open-lock-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
+
+  tr = document.getElementById('perform-act-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('perform-comedy-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('perform-dance-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('perform-keyboard-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('perform-oratory-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('perform-percussion-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('perform-string-instrument-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('perform-sing-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('profession-tr');
+  td = document.createElement('td');
+  td.textContent = wis;
+  tr.appendChild(td);
+
+  tr = document.getElementById('psicraft-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('ride-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
+
+  tr = document.getElementById('search-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('sense-motive-tr');
+  td = document.createElement('td');
+  td.textContent = wis;
+  tr.appendChild(td);
+
+  tr = document.getElementById('sleight-of-hand-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
+
+  tr = document.getElementById('spellcraft-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
+
+  tr = document.getElementById('spot-tr');
+  td = document.createElement('td');
+  td.textContent = wis;
+  tr.appendChild(td);
+
+  tr = document.getElementById('survival-tr');
+  td = document.createElement('td');
+  td.textContent = wis;
+  tr.appendChild(td);
+
+  tr = document.getElementById('swim-tr');
+  td = document.createElement('td');
+  td.textContent = str;
+  tr.appendChild(td);
+
+  tr = document.getElementById('tumble-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
+
+  tr = document.getElementById('magic-device-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('psionic-device-tr');
+  td = document.createElement('td');
+  td.textContent = cha;
+  tr.appendChild(td);
+
+  tr = document.getElementById('use-rope-tr');
+  td = document.createElement('td');
+  td.textContent = dex;
+  tr.appendChild(td);
 }
 
 function calcSkillModifier(roll) {
