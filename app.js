@@ -161,7 +161,8 @@ function renderAttributesTable() {
 
     if(i > 0) {
       upDiv = document.createElement('div');
-      upDiv.innerHTML = '<image class="up-arrow" src="assets/arrow22.png" alt="Up"/>';
+      upDiv.setAttribute('style', 'height: 25px');
+      upDiv.innerHTML = '<img class="up-arrow" src="assets/arrow22.png" alt="Up"/>';
       upDiv.addEventListener('click', handleUpClick);
       rollDiv.appendChild(upDiv);
     }
@@ -172,7 +173,7 @@ function renderAttributesTable() {
 
     if(i < rolls.length - 1) {
       dwnDiv = document.createElement('div');
-      dwnDiv.innerHTML = '<image class="down-arrow" src="assets/arrow22.png" alt="Down"/>';
+      dwnDiv.innerHTML = '<img class="down-arrow" src="assets/arrow22.png" alt="Down"/>';
       dwnDiv.addEventListener('click', handleDwnClick);
       rollDiv.appendChild(dwnDiv);
     }
