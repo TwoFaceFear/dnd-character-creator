@@ -9,8 +9,15 @@ if (currentCharacter < 1){
 }
 
 renderCharacter(currentCharacter);
+
 function renderCharacter(char) {
   var el;
+
+  el = document.getElementById('display-img-race');
+  el.setAttribute('src', char.race + '.png');
+
+  el = document.getElementById('display-img-class');
+  el.setAttribute('src', char.charClass + '.png');
 
   el = document.getElementById('display-name-h1');
   el.textContent = char.name;
@@ -30,6 +37,15 @@ function renderCharacter(char) {
   el = document.getElementById('display-align-h2');
   el.textContent = char.align;
 
+  el = document.getElementById('display-height-feet-h2');
+  el.textContent = char.heightFeet;
+
+  el = document.getElementById('display-height-inches-h2');
+  el.textContent = char.heightInches;
+
+  el = document.getElementById('display-weight-h2');
+  el.textContent = char.weight;
+
   el = document.getElementById('display-strength-li');
   el.innerHTML = el.innerHTML + char.strength;
 
@@ -47,6 +63,12 @@ function renderCharacter(char) {
 
   el = document.getElementById('display-charisma-li');
   el.innerHTML = el.innerHTML + char.charisma;
+
+  el = document.getElementById('display-story-h3');
+  el.textContent = char.story;
+
+  el = document.getElementById('display-looks-h3');
+  el.textContent = char.looks;
 }
 
 for (var i = 0; i < myCharacters.length; i++){

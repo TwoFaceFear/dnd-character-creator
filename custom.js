@@ -1,9 +1,5 @@
 'use strict';
 
-<<<<<<< HEAD
-var submit = document.getElementById('submit');
-submit
-=======
 var character;
 var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
@@ -35,7 +31,7 @@ function Character(name, race, gender, charClass, align) {
 
 function onlyLetters(nameInput) {
   //below is a regular expression that represents all upper and lower case letters
-  var alpha = /^[A-Za-z]+$/;
+  var alpha = /^[A-Za-z \s]+$/;
   if(nameInput.match(alpha))
   {
     return true;
@@ -259,4 +255,3 @@ function handleSubmitClick() {
 }
 
 main();
->>>>>>> 58ad1392a53f5b3a99d8a21669cb3a24dde6ccf1

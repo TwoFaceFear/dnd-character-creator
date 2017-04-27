@@ -101,7 +101,7 @@ function rollDice(numRolls) {
 
 function onlyLetters(nameInput) {
   //below is a regular expression that represents all upper and lower case letters
-  var alpha = /^[A-Za-z]+$/;
+  var alpha = /^[A-Za-z \s]+$/;
   if(nameInput.match(alpha))
   {
     return true;
@@ -125,7 +125,6 @@ function generateCharacter() {
     var align = getAlignment();
 
     character = new Character(name, race, gender, charClass, align);
-
     character.setHeightFeet(getHeightFeet());
     character.setHeightInches(getHeightInches());
     character.setWeight(getWeight());

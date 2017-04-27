@@ -199,12 +199,12 @@ font-size: 30;
 
  #sidebar
 {
-  position: absolute;
+  position: fixed;
   width: 300px;
   margin: -136px 0 0 42px;
   padding: 50px;
   padding-top: 125px;
-  height: 700px;
+  height: 1000px;
   background: #63605d;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -229,4 +229,13 @@ font-size: 30;
 {
   transform: scale(1.0, 1.0);
   opacity: 1;
+}
+
+#sidebar-fix {
+  float: left;
+  height: 1000px;
+  width: 52px;
+  background-color: #63605d;
+  display: inline;
+  margin: 0;
 }
