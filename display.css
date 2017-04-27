@@ -6,6 +6,11 @@
   font-family: 'Overpass', sans-serif;
   font-size: 20px;
 }
+html {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(assets/Dragons.png);
+}
   #header {
     background: #63605d;
     height: 100px;
