@@ -7,6 +7,7 @@ var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
   myCharacters = [];
 }
+var currentCharacter = [];
 
 function Character(name, race, gender, charClass, align) {
   this.name = name;
@@ -193,6 +194,7 @@ function handleSbmtDivClick() {
   character.setConstitution(rolls[5]);
 
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+  localStorage.setItem('currentCharacter', JSON.stringify(character));
   document.location.href = 'display.html';
 }
 
