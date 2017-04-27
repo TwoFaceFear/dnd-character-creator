@@ -1,116 +1,116 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
-  <title>Chaotic Creator</title>
-  <link href="custom.css" rel="stylesheet" style="text/css" />
-</head>
-<body>
-  <header>
-    <div id="header-wrapper">
-      <img src="assets/chaotic-creator-logo.png" id="logo" />
-      Chaotic Creator
-    </div>
-  </header>
-  <div id="sidebar-toggle">
-    <input type="checkbox" />
-    <span></span>
-    <span></span>
-    <span></span>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
+      <title>Chaotic Creator</title>
+      <link href="temp.css" rel="stylesheet" style="text/css" />
+    </head>
+    <body>
+      <div id="sidebar-fix"></div>
+      <header id="header">
+        <div class="chaoticClass">
+          <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
+          <h1 class="title">Chaotic Creator</h1>
+        </div>
+      </header>
+    <div id="sidebar-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
     <div id="sidebar">
       <ul>
         <li><a href="index.html"><b>Main Page</b></a></li>
         <li><a href="create.html"><b>Creation Page</b></a></li>
-        <li><a href="display.html"><b>Display Character</b></a></li>
+
         <li><a href="custom.html"><b>Custom Character</b></a></li>
+        <li><b>Your Characters</b></li>
       </ul>
     </div>
-  </div>
+    </div>
+    <div class="wrapper">
 
-  <h1 id="page-title">Create New Custom Character</h1>
+        <div id="basicInfo">Basic Information
+          <input type="text" placeholder="name" name="name" id="name" />
 
-  <div id="wrapper">
-    <div id="basicInfo">Basic Information
-      <input type="text" placeholder="name" name="name" id="name" />
+          <select class="dropdown" id="race">
+            <option  disabled selected>Race</option>
+            <option value="gnome"> Gnome </option>
+            <option value="human"> Human </option>
+            <option value="orc"> Orc </option>
+            <option value="elf"> Elf </option>
+            <option value="halfing"> Halfing </option>
+            <option value="dwarf"> Dwarf </option>
+          </select>
 
-      <select class="dropdown" id="race">
-        <option  disabled selected>Race</option>
-        <option value="gnome"> Gnome </option>
-        <option value="human"> Human </option>
-        <option value="orc"> Orc </option>
-        <option value="elf"> Elf </option>
-        <option value="halfing"> Halfing </option>
-        <option value="dwarf"> Dwarf </option>
-      </select>
+          <select class="dropdown" id="class">
+            <option  disabled selected>Class</option>
+            <option value="ranger"> Ranger </option>
+            <option value="wizard"> Wizard </option>
+            <option value="rogue"> Rogue </option>
+            <option value="fighter"> Fighter </option>
+            <option value="paladin"> Paladin </option>
+            <option value="cleric"> Cleric </option>
+          </select>
 
-      <select class="dropdown" id="class">
-        <option  disabled selected>Class</option>
-        <option value="ranger"> Ranger </option>
-        <option value="wizard"> Wizard </option>
-        <option value="rogue"> Rogue </option>
-        <option value="fighter"> Fighter </option>
-        <option value="paladin"> Paladin </option>
-        <option value="cleric"> Cleric </option>
-      </select>
+          <select class="dropdown" id="gender">
+            <option  disabled selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
 
-      <select class="dropdown" id="gender">
-        <option  disabled selected>Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
+          <select class="dropdown" id="alignment">
+            <option  disabled selected>Alignment</option>
+            <option value="chaoticGood">Chaotic Good</option>
+            <option value="chaoticNeutral">Chaotic Neutral</option>
+            <option value="chaoticEvil">Chaotic Evil</option>
+            <option value="neutralGood">Neutral Good </option>
+            <option value="neutralTrue">Neutral True</option>
+            <option value="neutralEvil">Neutral Evil</option>
+            <option value="lawfulGood">Lawful Good</option>
+            <option value="lawfulNeutral">Lawful Neutral</option>
+            <option value="lawfulEvil">Lawful Evil</option>
+          </select>
 
-      <select class="dropdown" id="alignment">
-        <option  disabled selected>Alignment</option>
-        <option value="chaoticGood">Chaotic Good</option>
-        <option value="chaoticNeutral">Chaotic Neutral</option>
-        <option value="chaoticEvil">Chaotic Evil</option>
-        <option value="neutralGood">Neutral Good </option>
-        <option value="neutralTrue">Neutral True</option>
-        <option value="neutralEvil">Neutral Evil</option>
-        <option value="lawfulGood">Lawful Good</option>
-        <option value="lawfulNeutral">Lawful Neutral</option>
-        <option value="lawfulEvil">Lawful Evil</option>
-      </select>
+          <select class="dropdown" id="size">
+            <option disabled selected>Size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option vlue="large">Large</option>
+          </select>
 
-      <select class="dropdown" id="size">
-        <option disabled selected>Size</option>
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option vlue="large">Large</option>
-      </select>
+          <div id="height">
+            <h3>Height</h3>
+            <input type="number" placeholder="feet" id="feet" />
+            <input type="number" placeholder="inches" id="inches" />
+          </div>
+        </div>
 
-      <div id="height">
-        <h3>Height</h3>
-        <input type="number" placeholder="feet" id="feet" />
+        <input type="number" placeholder="weight" id="weight" />
 
-        <input type="number" placeholder="inches" id="inches" />
+        <div id="rolls">Rolls
+          <input type="text" placeholder="strength" class="rolls" id="strength"/>
+
+          <input type="text" placeholder="dexterity" class="rolls" id="dexterity"/>
+
+          <input type="text" placeholder="constitution" class="rolls" id="constitution" />
+
+          <input type="text" placeholder="intelligence" class="rolls" id="intelligence" />
+
+          <input type="text" placeholder="wisdom" class="rolls" id="wisdom"/>
+
+          <input type="text" placeholder="charisma" class="rolls" id="charisma" />
+        </div>
+
+        <div id="charStory">Character Story
+          <textarea id="characterStory"></textarea>
+        </div>
+        <div id="charLooks">Looks
+          <textarea id="looks"></textarea>
+        </div>
+        <button type="button" id="submit">Submit!</button>
       </div>
-    </div>
 
-    <input type="number" placeholder="weight" id="weight" />
-
-    <div id="rolls">Rolls
-
-      <input type="text" placeholder="strength" class="rolls" id="strength"/>
-
-      <input type="text" placeholder="dexterity" class="rolls" id="dexterity"/>
-
-      <input type="text" placeholder="constitution" class="rolls" id="constitution" />
-
-      <input type="text" placeholder="intelligence" class="rolls" id="intelligence" />
-
-      <input type="text" placeholder="wisdom" class="rolls" id="wisdom"/>
-
-      <input type="text" placeholder="charisma" class="rolls" id="charisma" />
-
-    </div>
-
-    <div id="charStory">Character Story
-      <textarea id="characterStory"></textarea>
-    </div>
-    <div id="charLooks">Looks
-      <textarea id="looks"></textarea>
-    </div>
 
     <button type="button" id="submit">Submit!</button>
   </div>
@@ -120,5 +120,6 @@
 
   <script src="custom.js"> </script>
 
-</body>
-</html>
+      <div id="temp"></div>
+    </body>
+  </html>

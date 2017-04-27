@@ -4,7 +4,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
   <title>Character Display</title>
-  <link href="display.css" rel="stylesheet" style="text/css" />
+  <link href="temp.css" rel="stylesheet" style="text/css" />
 
 </head>
 
@@ -12,71 +12,82 @@
   <div id="sidebar-fix"></div>
   <header id="header">
     <div class="chaoticClass">
-      <h1>Welcome to Chaotic Creator!</h1>
+      <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
+      <h1 class="title">Chaotic Creator</h1>
     </div>
   </header>
-  <div id="sidebar-toggle">
-    <input type="checkbox" />
-    <span></span>
-    <span></span>
-    <span></span>
-    <div id="sidebar">
-      <ul>
-        <li><a href="index.html"><b>Main Page</b></a></li>
-        <li><a href="create.html"><b>Creation Page</b></a></li>
-        <li><a href="custom.html"><b>Custom Character</b></a></li>
-        <li><b>Your Characters</b></li>
-      </ul>
+<div id="sidebar-toggle">
+  <input type="checkbox" />
+  <span></span>
+  <span></span>
+  <span></span>
+<div id="sidebar">
+  <ul>
+    <li><a href="index.html"><b>Main Page</b></a></li>
+    <li><a href="create.html"><b>Creation Page</b></a></li>
+    <li><a href="custom.html"><b>Custom Character</b></a></li>
+    <li><b>Your Characters</b></li>
+  </ul>
+</div>
+</div>
+<div class="wrapper">
+      <div id="display-img">
+        <image id="display-img-race" class="display-img-race" src="" alt="Character Race"/>
+        <image id="display-img-class" class="display-img-class" src="" alt="Character Class"/>
+      </div>
+      <div id="display-name">
+        <h1 id="display-name-h1"></h1>
+      </div>
+      <div id="display-race">
+        <h2 id="display-race-h2"></h2>
+      </div>
+      <div id="display-class">
+        <h2 id="display-class-h2"></h2>
+      </div>
+      <div id="display-gender">
+        <h2 id="display-gender-h2"></h2>
+      </div>
+      <div id="display-size">
+        <h2 id="display-size-h2"></h2>
+      </div>
+      <div id="display-align">
+        <h2 id="display-align-h2"></h2>
+      </div>
+      <div id="display-height-feet">
+        <h2 id="display-height-feet-h2"></h2>
+      </div>
+      <div id="display-height-inches">
+        <h2 id="display-height-inches-h2"></h2>
+      </div>
+      <div id="display-weight">
+        <h2 id="display-weight-h2"></h2>
+      </div>
+      <div id="display-ability-list">
+        <ul class="display-list" id="display-list">
+          <li class="dl-li" id="display-strength-li">Strength:<span id="strength"> </span> </li>
+          <li class="dl-li" id="display-dexterity-li">Dexterity: </li>
+          <li class="dl-li" id="display-constitution-li">Constitution: </li>
+          <li class="dl-li" id="display-intelligence-li">Intelligence: </li>
+          <li class="dl-li" id="display-wisdom-li">Wisdom: </li>
+          <li class="dl-li" id="display-charisma-li">Charisma: </li>
+        </ul>
+      </div>
+      <div id="display-story">
+        <h3 id="display-story-h3"></h3>
+      </div>
+      <div id="display-looks">
+        <h3 id="display-looks-h3"></h3>
+      </div>
+
+      <button name="delete" id="delete">Delete</button>
+
+      <!-- this returns user to main page -->
+      <h2><a href = "index.html" />Click here to return to Main Page</h2>
     </div>
+    <script src="app.js">
+    </script>
+    <script src="display.js"></script>
   </div>
-  <div class="display-char-info">
-    <div id="display-img">
-      <image id="display-img-race" src="" alt="Character Race"/>
-      <image id="display-img-class" src="" alt="Character Class"/>
-    </div>
-    <div id="display-name">
-      <h1 id="display-name-h1"></h1>
-    </div>
-    <div id="display-race">
-      <h2 id="display-race-h2"></h2>
-    </div>
-    <div id="display-class">
-      <h2 id="display-class-h2"></h2>
-    </div>
-    <div id="display-gender">
-      <h2 id="display-gender-h2"></h2>
-    </div>
-    <div id="display-size">
-      <h2 id="display-size-h2"></h2>
-    </div>
-    <div id="display-align">
-      <h2 id="display-align-h2"></h2>
-    </div>
-    <div id="display-height-feet">
-      <h2 id="display-height-feet-h2"></h2>
-    </div>
-    <div id="display-height-inches">
-      <h2 id="display-height-inches-h2"></h2>
-    </div>
-    <div id="display-weight">
-      <h2 id="display-weight-h2"></h2>
-    </div>
-    <div id="display-ability-list">
-      <ul id="display-list">
-        <li class="dl-li" id="display-strength-li">Strength:<span id="strength"> </span> </li>
-        <li class="dl-li" id="display-dexterity-li">Dexterity: </li>
-        <li class="dl-li" id="display-constitution-li">Constitution: </li>
-        <li class="dl-li" id="display-intelligence-li">Intelligence: </li>
-        <li class="dl-li" id="display-wisdom-li">Wisdom: </li>
-        <li class="dl-li" id="display-charisma-li">Charisma: </li>
-      </ul>
-    </div>
-    <div id="display-story">
-      <h3 id="display-story-h3"></h3>
-    </div>
-    <div id="display-looks">
-      <h3 id="display-looks-h3"></h3>
-    </div>
 
     <div id="skills-div">
       <table id="skills-table-one">
