@@ -41,46 +41,6 @@ header {
   width: 187px;
 }
 
-/*#header {
-  background: #2e2d2c;
-  height: 150px;
-  width: 100%;
-}*/
-
-.display-img-race {
-  height: 150px;
-  width: 150px;
-}
-
-.display-img-class {
-  height: 150px;
-  width: 150px;
-}
-
-
-.wrapper {
-  width: 960px;
-  height: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.chaoticClass h1 {
-  font-family: 'Caudex', sans-serif;
-  font-size: 70px;
-}
-
-
-.chaoticClass {
-  text-align: center;
-}
-
-.display-list {
-  text-align: left;
-  width: 200px;
-  margin: 0 auto;
-}
-
 .dl-li {
   list-style: none;
 }
@@ -182,53 +142,99 @@ a:hover {
 #sidebar-toggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
-}  /*text-align: center;*/
-#sidebar-toggle input:checked~span:nth-last-child(2) {
-  opacity: 1;
-  transform: rotate(-45deg) translate(0, -1px);
+  }  /*text-align: center;*/
+  #sidebar-toggle input:checked~span:nth-last-child(2) {
+    opacity: 1;
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  /* Make this absolute positioned at the top left of the screen */
+
+  #sidebar {
+    position: fixed;
+    width: 215px;
+    margin: -136px 0 0 42px;
+    padding-top: 125px;
+    height: 1200px;
+    background: #63605d;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  }
+
+  #sidebar a, #sidebar ul li {
+    margin-top:10px;
+    font-size: 20px;
+    width: 182px;
+  }
+
+  /* And let's fade it in from the left */
+
+  #sidebar-toggle input:checked~div {
+    transform: scale(1.0, 1.0);
+    opacity: 1;
+  }
+
+  #sidebar-fix {
+    position: fixed;
+    height: 1000px;
+    width: 52px;
+    background-color: #63605d;
+    display: inline;
+    margin: 0;
+  }
+
+  #sidebar ul li.nth-child(2){
+    text-decoration: underline;
+  }
+
+.display-img-race {
+  height: 150px;
+  width: 150px;
 }
 
-/* Make this absolute positioned at the top left of the screen */
-
-#sidebar {
-  position: fixed;
-  width: 300px;
-  margin: -136px 0 0 42px;
-  padding-top: 125px;
-  height: 1200px;
-  background: #63605d;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+.display-img-class {
+  height: 150px;
+  width: 150px;
 }
 
-#sidebar a, #sidebar ul li {
-  margin-top:10px;
-  font-size: 20px;
-  width: 182px;
+
+.wrapper {
+  width: 960px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* And let's fade it in from the left */
-
-#sidebar-toggle input:checked~div {
-  transform: scale(1.0, 1.0);
-  opacity: 1;
+.chaoticClass h1 {
+  font-family: 'Caudex', sans-serif;
+  font-size: 70px;
 }
 
-#sidebar-fix {
-  position: fixed;
-  height: 1000px;
-  width: 52px;
-  background-color: #63605d;
-  display: inline;
-  margin: 0;
+
+.chaoticClass {
+  text-align: center;
 }
 
-#sidebar ul li.nth-child(2){
-  text-decoration: underline;
+.display-list {
+  text-align: left;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.up-arrow {
+  height: 25px;
+  width: 25px;
+  transform: rotate(270deg);
+}
+
+.down-arrow {
+  height: 25px;
+  width: 25px;
+  transform: rotate(90deg);
 }
 
 /*
