@@ -1,24 +1,42 @@
 * {
   width: 100%;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   padding: 0;
   box-sizing: border-box;
   font-family: 'Overpass', sans-serif;
   font-size: 20px;
+  /*width: 960px;*/
+
 }
 
 #wrapper {
-  width: 960px;
+  /*width: 960px;*/
   height: 100%;
+<<<<<<< HEAD
+  display: block;
+}
+
+#logo {
+  margin: 0;
+  height: 156px;
+  width: 187px;
+  display: block;
+=======
+  text-align: center;
+>>>>>>> e51d80b58b15703e60e1696a794706d44e0d7931
 }
 
 header {
   width: 100%;
-  height: 150px;
+  height: 200px;
   font-size: 70px;
-  font-face: 'Aclonica', sans-serif;
   color: hsla(17, 100%, 53%, 1);
   background-color: hsla(30, 2%, 18%, 1);
+}
+
+#page-title {
+  margin: 0;
+  padding: 0;
 }
 
 #header-wrapper {
@@ -28,6 +46,8 @@ header {
   padding-top: 25px;
   font-size: 70px;
   font-family: 'Caudex', sans-serif;
+  padding-bottom: 250px;
+  display: inline-block;
 }
 
 body {
@@ -36,14 +56,22 @@ body {
 
 .dropdown {
   width: auto;
+  border: hsla(30, 2%, 18%, 1) solid 2px;
+  background-color: hsla(30, 11%, 90%, 1);
+  color: hsla(30, 2%, 18%, 1);
+}
+
+#basicInfo {
+  margin-top: 6px;
 }
 
 #rolls {
   width: 120px;
   margin-top: 6px;
 }
+
 .rolls {
-  width: 120px;
+  width: 130px;
   display-type: block;
   margin: 2px;
 }
@@ -52,6 +80,157 @@ body {
   margin-top: 6px;
 }
 
-#basicInfo {
+
+#charPic{
+  width: auto;
+  border: hsla(30, 2%, 18%, 1) solid 2px;
+  background-color: hsla(30, 11%, 90%, 1);
+  color: hsla(30, 2%, 18%, 1);
+}
+
+#height {
   margin-top: 6px;
 }
+
+<<<<<<< HEAD
+#feet {
+  width: 49%;
+  margin-left: 2%;
+}
+
+#inches{
+  width: 49%;
+}
+=======
+/* The side bar */
+
+#sidebar-toggle{
+  margin: 0 !important;
+  display: block;
+    position: relative;
+    top: -90px;
+    left: 10px;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  #sidebar-toggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+#sidebar-toggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#sidebar-toggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#sidebar-toggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#sidebar-toggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#sidebar-toggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#sidebar-toggle input:checked ~ span:nth-last-child(2)
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+
+ #sidebar
+{
+  position: absolute;
+  width: 300px;
+  margin: -37px 0 0 -10px;
+  padding: 50px;
+  padding-top: 125px;
+  height: 700px;
+  background: #63605d;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#sidebar a
+{
+  padding: 10px;
+  font-size: 22px;
+}
+
+/*
+ * And let's fade it in from the left
+ */
+#sidebar-toggle input:checked ~ div
+{
+  transform: scale(1.0, 1.0);
+  opacity: 1;
+}
+
+/* End side bar */
+>>>>>>> e51d80b58b15703e60e1696a794706d44e0d7931

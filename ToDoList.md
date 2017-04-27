@@ -11,6 +11,13 @@ DAY 2 goals:
   Basic CSS
   Multi Character Display
 
+DAY 3 goals:
+  force strings
+  force numbers tool
+  hamburger menu
+  integrate custom.html
+  insert logo
+
 2: finish product
 
 
