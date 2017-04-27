@@ -3,10 +3,10 @@
 var currentCharacter;
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
-
-if (currentCharacter < 1){
-  currentCharacter = myCharacters[0];
-}
+// 
+// if (currentCharacter < 1){
+//   currentCharacter = myCharacters[0];
+// }
 
 renderCharacter(currentCharacter);
 function renderCharacter(char) {
