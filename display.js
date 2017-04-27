@@ -57,7 +57,19 @@ function renderCharacter(char) {
 }
 
 function renderSkills() {
+  var str = calcSkillModifier(currentCharacter.strength);
+  var dex = calcSkillModifier(currentCharacter.dexterity);
+  var con = calcSkillModifier(currentCharacter.constitution);
+  var int = calcSkillModifier(currentCharacter.intelligence);
+  var wis = calcSkillModifier(currentCharacter.wisdom);
+  var cha = calcSkillModifier(currentCharacter.charisma);
+  var tr;
+  var td;
 
+  tr = document.getElementById('appraise-tr');
+  td = document.createElement('td');
+  td.textContent = int;
+  tr.appendChild(td);
 }
 
 function calcSkillModifier(roll) {
@@ -141,5 +153,5 @@ function handleDeleteClick(){
   currentCharacter = [];
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
   localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
-  window.location.reload();
+  window.location.assign('index.html');
 }
