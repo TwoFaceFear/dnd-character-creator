@@ -89,32 +89,22 @@ body {
   margin-top: 6px;
 }
 
-<<<<<<< HEAD
-#feet {
-  width: 49%;
-  margin-left: 2%;
-}
-
-#inches{
-  width: 49%;
-}
-=======
 /* The side bar */
 
 #sidebar-toggle{
   margin: 0 !important;
   display: block;
-    position: relative;
-    top: -90px;
-    left: 10px;
+  position: relative;
+  top: -90px;
+  left: 10px;
 
-    z-index: 1;
+  z-index: 1;
 
-    -webkit-user-select: none;
-    user-select: none;
-  }
+  -webkit-user-select: none;
+  user-select: none;
+}
 
-  #sidebar-toggle input
+#sidebar-toggle input
 {
   display: block;
   width: 40px;
@@ -147,8 +137,8 @@ body {
   transform-origin: 4px 0px;
 
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  opacity 0.55s ease;
 }
 
 #sidebar-toggle span:first-child
@@ -162,9 +152,9 @@ body {
 }
 
 /*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+* Transform all the slices of hamburger
+* into a crossmark.
+*/
 #sidebar-toggle input:checked ~ span
 {
   opacity: 1;
@@ -173,8 +163,8 @@ body {
 }
 
 /*
- * But let's hide the middle one.
- */
+* But let's hide the middle one.
+*/
 #sidebar-toggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
@@ -182,8 +172,8 @@ body {
 }
 
 /*
- * Ohyeah and the last one should go the other direction
- */
+* Ohyeah and the last one should go the other direction
+*/
 #sidebar-toggle input:checked ~ span:nth-last-child(2)
 {
   opacity: 1;
@@ -191,11 +181,11 @@ body {
 }
 
 /*
- * Make this absolute positioned
- * at the top left of the screen
- */
+* Make this absolute positioned
+* at the top left of the screen
+*/
 
- #sidebar
+#sidebar
 {
   position: absolute;
   width: 300px;
@@ -221,8 +211,8 @@ body {
 }
 
 /*
- * And let's fade it in from the left
- */
+* And let's fade it in from the left
+*/
 #sidebar-toggle input:checked ~ div
 {
   transform: scale(1.0, 1.0);
@@ -230,4 +220,3 @@ body {
 }
 
 /* End side bar */
->>>>>>> e51d80b58b15703e60e1696a794706d44e0d7931
