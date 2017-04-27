@@ -4,7 +4,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
   <title>Character Display</title>
-  <link href="display.css" rel="stylesheet" style="text/css" />
+  <link href="temp.css" rel="stylesheet" style="text/css" />
 
 </head>
 
@@ -12,7 +12,8 @@
   <div id="sidebar-fix"></div>
   <header id="header">
     <div class="chaoticClass">
-      <h1>Welcome to Chaotic Creator!</h1>
+      <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
+      <h1 class="title">Chaotic Creator</h1>
     </div>
   </header>
 <div id="sidebar-toggle">
@@ -29,10 +30,10 @@
   </ul>
 </div>
 </div>
-<div class="display-char-info">
+<div class="wrapper">
       <div id="display-img">
-        <image id="display-img-race" src="" alt="Character Race"/>
-        <image id="display-img-class" src="" alt="Character Class"/>
+        <image id="display-img-race" class="display-img-race" src="" alt="Character Race"/>
+        <image id="display-img-class" class="display-img-class" src="" alt="Character Class"/>
       </div>
       <div id="display-name">
         <h1 id="display-name-h1"></h1>
@@ -62,7 +63,7 @@
         <h2 id="display-weight-h2"></h2>
       </div>
       <div id="display-ability-list">
-        <ul id="display-list">
+        <ul class="display-list" id="display-list">
           <li class="dl-li" id="display-strength-li">Strength:<span id="strength"> </span> </li>
           <li class="dl-li" id="display-dexterity-li">Dexterity: </li>
           <li class="dl-li" id="display-constitution-li">Constitution: </li>
@@ -86,9 +87,6 @@
     <script src="app.js">
     </script>
     <script src="display.js"></script>
-  </div>
-  <div id="temp">
-    asdfasdf
   </div>
 
 

@@ -13,16 +13,56 @@ html {
   background-repeat: no-repeat;
   background-image: url(assets/Dragons.png);
 }
-#header {
-  background: #63605d;
-  height: 100px;
-  text-align: center;
+
+header {
+  margin: 0;
+  width: 100%;
+  background: #2e2d2c;
+  height: 200px;
+  /*text-align: center;*/
+  color: #FF530D;
+  font: 'Caudex', sans-serif;
 }
 
-#wrapper {
+.title {
+  float: left;
+  width: auto;
+  height: auto;
+  margin-left: 550px;
+  margin-top: 50px;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 600px;
+  margin-right: -600px;
+  float: left;
+  height: 156px;
+  width: 187px;
+}
+
+/*#header {
+  background: #2e2d2c;
+  height: 150px;
+  width: 100%;
+}*/
+
+.display-img-race {
+  height: 150px;
+  width: 150px;
+}
+
+.display-img-class {
+  height: 150px;
+  width: 150px;
+}
+
+
+.wrapper {
   width: 960px;
   height: 100%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .chaoticClass h1 {
@@ -30,21 +70,12 @@ html {
   font-size: 70px;
 }
 
-header {
-  margin: 0;
-  width: 100%;
-  background: #2e2d2c;
-  height: 200px;
-  text-align: center;
-  color: #FF530D;
-  font: 'Caudex', sans-serif;
-}
 
 .chaoticClass {
   text-align: center;
 }
 
-#display-list {
+.display-list {
   text-align: left;
   width: 200px;
   margin: 0 auto;
@@ -57,21 +88,11 @@ header {
 .dl-li:before {
   content: '';
   display: inline-block;
-  height: 1em;
-  width: 1em;
+  height: 15px;
+  width: 15px;
   background-image: url(assets/arrow22.png);
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-img {
-  height: 150px;
-  width: 150px;
-}
-
-
-.display-char-info {
-  text-align: center;
 }
 
 a, #sidebar ul li {
@@ -153,7 +174,7 @@ a:hover {
 #sidebar-toggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+  background: #FF530D;
 }
 
 /* But let's hide the middle one. */
@@ -161,10 +182,7 @@ a:hover {
 #sidebar-toggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/* Ohyeah and the last one should go the other direction */
-
+}  /*text-align: center;*/
 #sidebar-toggle input:checked~span:nth-last-child(2) {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);

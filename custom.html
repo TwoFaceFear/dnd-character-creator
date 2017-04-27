@@ -3,32 +3,31 @@
     <head>
       <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
       <title>Chaotic Creator</title>
-      <link href="custom.css" rel="stylesheet" style="text/css" />
+      <link href="temp.css" rel="stylesheet" style="text/css" />
     </head>
     <body>
-      <header>
-        <div id="header-wrapper">
-          <img src="assets/chaotic-creator-logo.png" id="logo" />
-          Chaotic Creator
+      <div id="sidebar-fix"></div>
+      <header id="header">
+        <div class="chaoticClass">
+          <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
+          <h1 class="title">Chaotic Creator</h1>
         </div>
       </header>
-      <div id="sidebar-toggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-      <div id="sidebar">
-        <ul>
-          <li><a href="index.html"><b>Main Page</b></a></li>
-          <li><a href="create.html"><b>Creation Page</b></a></li>
-          <li><a href="display.html"><b>Display Character</b></a></li>
-          <li><a href="custom.html"><b>Custom Character</b></a></li>
-        </ul>
-      </div>
-      </div>
-
-      <h1 id="page-title">Create New Custom Character</h1>
-      <div id="wrapper">
+    <div id="sidebar-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    <div id="sidebar">
+      <ul>
+        <li><a href="index.html"><b>Main Page</b></a></li>
+        <li><a href="create.html"><b>Creation Page</b></a></li>
+        <li><a href="custom.html"><b>Custom Character</b></a></li>
+        <li><b>Your Characters</b></li>
+      </ul>
+    </div>
+    </div>
+    <div class="wrapper">
 
         <div id="basicInfo">Basic Information
           <input type="text" placeholder="name" name="name" id="name" />
@@ -82,7 +81,6 @@
           <div id="height">
             <h3>Height</h3>
             <input type="number" placeholder="feet" id="feet" />
-
             <input type="number" placeholder="inches" id="inches" />
           </div>
         </div>
@@ -118,5 +116,6 @@
 
 <script src="custom.js"> </script>
 
+      <div id="temp"></div>
     </body>
   </html>

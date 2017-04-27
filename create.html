@@ -2,21 +2,34 @@
 <html>
 <head>
   <title>Create!</title>
-  <link rel="stylesheet" type="text/css" href="create.css" >
+  <link rel="stylesheet" type="text/css" href="temp.css" >
   <link href="https://fonts.googleapis.com/css?family=Caudex" rel="stylesheet">
   <script type="text/javascript">
   </script>
 </head>
 <body>
-
+  <div id="sidebar-fix"></div>
   <header id="header">
-    <div class="headerOne">
-      <img src="assets/chaotic-creator-logo.png" alt="logo" />
-      <h1>Create!</h1>
+    <div class="chaoticClass">
+      <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
+      <h1 class="title">Chaotic Creator</h1>
     </div>
   </header>
-
-<div id="createfields">
+<div id="sidebar-toggle">
+  <input type="checkbox" />
+  <span></span>
+  <span></span>
+  <span></span>
+<div id="sidebar">
+  <ul>
+    <li><a href="index.html"><b>Main Page</b></a></li>
+    <li><a href="create.html"><b>Creation Page</b></a></li>
+    <li><a href="custom.html"><b>Custom Character</b></a></li>
+    <li><b>Your Characters</b></li>
+  </ul>
+</div>
+</div>
+<div class="wrapper" id="createfields">
 
   <input type="text" name="name" id="name">
 
