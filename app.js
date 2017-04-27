@@ -7,6 +7,7 @@ var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
   myCharacters = [];
 }
+var currentCharacter = [];
 
 function Character(name, race, gender, charClass, align) {
   this.name = name;
@@ -160,7 +161,7 @@ function renderAttributesTable() {
 
     if(i > 0) {
       upDiv = document.createElement('div');
-      upDiv.innerHTML = '<p>up</p>';
+      upDiv.innerHTML = '<image class="up-arrow" src="assets/arrow22.png" alt="Up"/>';
       upDiv.addEventListener('click', handleUpClick);
       rollDiv.appendChild(upDiv);
     }
@@ -171,7 +172,7 @@ function renderAttributesTable() {
 
     if(i < rolls.length - 1) {
       dwnDiv = document.createElement('div');
-      dwnDiv.innerHTML = '<p>down</p>';
+      dwnDiv.innerHTML = '<image class="down-arrow" src="assets/arrow22.png" alt="Down"/>';
       dwnDiv.addEventListener('click', handleDwnClick);
       rollDiv.appendChild(dwnDiv);
     }
@@ -193,6 +194,7 @@ function handleSbmtDivClick() {
   character.setConstitution(rolls[5]);
 
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+  localStorage.setItem('currentCharacter', JSON.stringify(character));
   document.location.href = 'display.html';
 }
 

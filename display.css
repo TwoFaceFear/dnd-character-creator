@@ -1,11 +1,13 @@
 * {
   width: 100%;
-  /*margin: 0 auto;*/
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: normal;
   font-family: 'Overpass', sans-serif;
   font-size: 20px;
 }
+
 html {
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,182 +19,240 @@ html {
     text-align: center;
   }
 
-  .chaoticClass {
-    text-align: center;
-  }
-/*
-orange: rgb(255, 83, 13);
-  hsla(17, 100%, 53%, 1);
-  #FF530D;
+#wrapper {
+  width: 960px;
+  height: 100%;
+  margin: 0 auto;
+}
 
-  dark gray: rgb(46, 45, 44);
-  hsla(30, 2%, 18%, 1);
-  #2e2d2c;
+.chaoticClass h1 {
+  font-family: 'Caudex', sans-serif;
+  font-size: 70px;
+}
 
-  gray: rgb(99, 96, 93);
-  hsla(30, 3%, 38%, 1);
-  #63605d;
+header {
+  margin: 0;
+  width: 100%;
+  background: #2e2d2c;
+  height: 200px;
+  text-align: center;
+  color: #FF530D;
+  font: 'Caudex', sans-serif;
+}
 
-  accent gray(light): rgb(232, 229, 226);
-  hsla(30, 11%, 90%, 1);
-  #e8e5e2;
+.chaoticClass {
+  text-align: center;
+}
 
-  off white: rgb(245, 242, 239);
-  hsla(30, 23%, 95%, 1);
-  #f5f2ef;
+#display-list {
+  text-align: left;
+  width: 200px;
+  margin: 0 auto;
+}
 
-*/
+.dl-li {
+  list-style: none;
+}
+
+.dl-li:before {
+  content: '';
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-image: url(assets/arrow22.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 img {
   height: 150px;
   width: 150px;
 }
 
-a {
+a, #sidebar ul li {
   display: block;
   text-decoration: none;
   color: #e8e5e2;
-
   transition: color 0.3s ease;
 }
 
-a:hover
-{
+a:hover {
   color: #FF530D;
 }
 
-.characters{
-padding: 10px;
-font-size: 30;
+.characters {
+  padding: 10px;
+  font-size: 30;
+  list-style: none;
 }
 
-.display-char-info{
+.characters:before {
+  content: '';
+  display: inline-block;
+  height: 15px;
+  width: 1em;
+  background-image: url(assets/arrow22.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.display-char-info {
   text-align: center;
 }
 
-#sidebar-toggle{
+#sidebar-toggle {
   display: block;
-    position: relative;
-    top: -90px;
-    left: 10px;
+  position: fixed;
+  top: 9px;
+  left: 8px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
 
-    z-index: 1;
 
-    -webkit-user-select: none;
-    user-select: none;
-  }
-
-  #sidebar-toggle input
-{
+#sidebar-toggle input {
   display: block;
   width: 40px;
   height: 32px;
   position: absolute;
   top: -7px;
   left: -5px;
-
   cursor: pointer;
-
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
   -webkit-touch-callout: none;
 }
 
-#sidebar-toggle span
-{
+#sidebar-toggle span {
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-
   background: #cdcdcd;
   border-radius: 3px;
-
   z-index: 1;
-
   transform-origin: 4px 0px;
-
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
 }
 
-#sidebar-toggle span:first-child
-{
+#sidebar-toggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#sidebar-toggle span:nth-last-child(2)
-{
+#sidebar-toggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
+
 
 /*
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#sidebar-toggle input:checked ~ span
-{
+
+#sidebar-toggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
+
 /*
  * But let's hide the middle one.
  */
-#sidebar-toggle input:checked ~ span:nth-last-child(3)
-{
+
+#sidebar-toggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
+
 /*
  * Ohyeah and the last one should go the other direction
  */
-#sidebar-toggle input:checked ~ span:nth-last-child(2)
-{
+
+#sidebar-toggle input:checked~span:nth-last-child(2) {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
+
 
 /*
  * Make this absolute positioned
  * at the top left of the screen
  */
 
- #sidebar
-{
-  position: absolute;
+#sidebar {
+  position: fixed;
   width: 300px;
-  margin: -37px 0 0 -10px;
+  margin: -136px 0 0 42px;
   padding: 50px;
   padding-top: 125px;
-  height: 700px;
+  height: 1200px;
   background: #63605d;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
-#sidebar a
-{
+#sidebar a, #sidebar ul li {
   padding: 10px;
-  font-size: 22px;
+  font-size: 20px;
+  width: 182px;
 }
+
 
 /*
  * And let's fade it in from the left
  */
-#sidebar-toggle input:checked ~ div
-{
+
+#sidebar-toggle input:checked~div {
   transform: scale(1.0, 1.0);
   opacity: 1;
+}
+
+#sidebar-fix {
+  position: fixed;
+  height: 1000px;
+  width: 52px;
+  background-color: #63605d;
+  display: inline;
+  margin: 0;
+}
+
+
+/*
+orange: rgb(255, 83, 13);
+hsla(17, 100%, 53%, 1);
+#FF530D;
+
+dark gray: rgb(46, 45, 44);
+hsla(30, 2%, 18%, 1);
+#2e2d2c;
+
+gray: rgb(99, 96, 93);
+hsla(30, 3%, 38%, 1);
+#63605d;
+
+accent gray(light): rgb(232, 229, 226);
+hsla(30, 11%, 90%, 1);
+#e8e5e2;
+
+off white: rgb(245, 242, 239);
+hsla(30, 23%, 95%, 1);
+#f5f2ef;
+
+*/
+
+
+#temp {
+  height: 3000px;
+  font-size: 1000px;
 }
