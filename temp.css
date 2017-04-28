@@ -26,6 +26,7 @@ header {
 
 .title {
   float: left;
+  text-align: center;
   width: auto;
   height: auto;
   margin-left: 550px;
@@ -34,7 +35,7 @@ header {
 
 .logo {
   margin-top: 20px;
-  margin-left: 600px;
+  margin-left: 30%;
   margin-right: -600px;
   float: left;
   height: 156px;
@@ -263,7 +264,21 @@ a:hover {
 
 tr {
   width: 300px;
-  color: black;
+}
+
+input {
+  width: auto;
+  display: block;
+}
+
+select {
+  width: auto;
+  display: block;
+}
+
+button {
+  width: auto;
+  display: block;
 }
 
 /*
@@ -287,4 +302,5 @@ off white: rgb(245, 242, 239);
 hsla(30, 23%, 95%, 1);
 #f5f2ef;
 
+a comment
 */
