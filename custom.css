@@ -6,25 +6,28 @@
   font-family: 'Overpass', sans-serif;
   font-size: 20px;
   /*width: 960px;*/
-
 }
+
+
 
 #wrapper {
-  /*width: 960px;*/
+  width: 960px;
+  padding-top: 200px;
   height: 100%;
-<<<<<<< HEAD
   display: block;
+  margin: 0 auto;
 }
 
-#logo {
-  margin: 0;
-  height: 156px;
-  width: 187px;
-  display: block;
-=======
-  text-align: center;
->>>>>>> e51d80b58b15703e60e1696a794706d44e0d7931
-}
+/*#logo {
+margin: 0;
+height: 156px;
+width: 187px;
+display: block;
+text-align: center;
+
+}*/
+
+
 
 header {
   width: 100%;
@@ -32,6 +35,8 @@ header {
   font-size: 70px;
   color: hsla(17, 100%, 53%, 1);
   background-color: hsla(30, 2%, 18%, 1);
+  /*position: fixed;*/
+  z-index: 0;
 }
 
 #page-title {
@@ -41,25 +46,46 @@ header {
 
 #header-wrapper {
   width: 100%;
-  height: 50px;
+  height: 200px;
   text-align: center;
   padding-top: 25px;
   font-size: 70px;
   font-family: 'Caudex', sans-serif;
   padding-bottom: 250px;
-  display: inline-block;
+  display: inline;
+  margin-left: 220px;
 }
 
+#header-wrapper img {
+  margin-left: 40px;
+  margin-top: 20px;
+  height: 156px;
+  width: 187px;
+}
+
+#header-wrapper h1 {
+  margin-top: -200px;
+  font-family: 'Caudex', sans-serif;
+  font-weight: normal;
+}
+
+#head-title {
+  color: hsla(17, 100%, 53%, 1);
+  font-size: 150px;
+  z-index: 0;
+}
 body {
   background-color: hsla(30, 23%, 95%, 1);
+  margin: 0;
 }
 
-.dropdown {
-  width: auto;
-  border: hsla(30, 2%, 18%, 1) solid 2px;
-  background-color: hsla(30, 11%, 90%, 1);
-  color: hsla(30, 2%, 18%, 1);
-}
+/*.dropdown {
+width: auto;
+border: hsla(30, 2%, 18%, 1) solid 2px;
+background-color: hsla(30, 11%, 90%, 1);
+color: hsla(30, 2%, 18%, 1);
+z-index: 1000000;
+}*/
 
 #basicInfo {
   margin-top: 6px;
@@ -92,7 +118,6 @@ body {
   margin-top: 6px;
 }
 
-<<<<<<< HEAD
 #feet {
   width: 49%;
   margin-left: 2%;
@@ -101,23 +126,24 @@ body {
 #inches{
   width: 49%;
 }
-=======
+
+
 /* The side bar */
 
 #sidebar-toggle{
   margin: 0 !important;
   display: block;
-    position: relative;
-    top: -90px;
-    left: 10px;
+  position: relative;
+  top: -90px;
+  left: 10px;
 
-    z-index: 1;
+  z-index: 1;
 
-    -webkit-user-select: none;
-    user-select: none;
-  }
+  -webkit-user-select: none;
+  user-select: none;
+}
 
-  #sidebar-toggle input
+#sidebar-toggle input
 {
   display: block;
   width: 40px;
@@ -150,8 +176,8 @@ body {
   transform-origin: 4px 0px;
 
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  opacity 0.55s ease;
 }
 
 #sidebar-toggle span:first-child
@@ -165,9 +191,9 @@ body {
 }
 
 /*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+* Transform all the slices of hamburger
+* into a crossmark.
+*/
 #sidebar-toggle input:checked ~ span
 {
   opacity: 1;
@@ -176,8 +202,8 @@ body {
 }
 
 /*
- * But let's hide the middle one.
- */
+* But let's hide the middle one.
+*/
 #sidebar-toggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
@@ -185,8 +211,8 @@ body {
 }
 
 /*
- * Ohyeah and the last one should go the other direction
- */
+* Ohyeah and the last one should go the other direction
+*/
 #sidebar-toggle input:checked ~ span:nth-last-child(2)
 {
   opacity: 1;
@@ -194,11 +220,11 @@ body {
 }
 
 /*
- * Make this absolute positioned
- * at the top left of the screen
- */
+* Make this absolute positioned
+* at the top left of the screen
+*/
 
- #sidebar
+#sidebar
 {
   position: absolute;
   width: 300px;
@@ -224,8 +250,8 @@ body {
 }
 
 /*
- * And let's fade it in from the left
- */
+* And let's fade it in from the left
+*/
 #sidebar-toggle input:checked ~ div
 {
   transform: scale(1.0, 1.0);
@@ -233,4 +259,7 @@ body {
 }
 
 /* End side bar */
->>>>>>> e51d80b58b15703e60e1696a794706d44e0d7931
+
+#temp {
+  height: 1000px;
+}

@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /*Colour Palette*/
 /*
 orange: rgb(255, 83, 13);
@@ -22,6 +23,14 @@ off white: rgb(245, 242, 239);
 hsla(30, 23%, 95%, 1);
 #f5f2ef;
 */
+
+/*background image for flavor*/
+html {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(assets/Dragons.png);
+}
+
 body {
   overflow: scroll;
 }
@@ -49,10 +58,11 @@ body {
   margin: 0;
 }
 #createfields{
+  width: 960px;
   overflow: scroll;
   background-color: #e8e5e2;
   position: relative;
-margin-bottom:  auto;
+  margin-bottom:  auto;
 }
 
 
@@ -72,4 +82,21 @@ margin-bottom:  auto;
   margin-top: 75%;
   margin: 0;
   /*padding-top: 20px;*/
+}
+
+.up-arrow {
+  height: 20px;
+  width: 20px;
+}
+
+.down-arrow {
+  height: 20px;
+  widht: 20px;
+}
+
+#attributes-div div div{
+  height: 50px;
+  width: 50px;
+  rotation-point:50% 50%;
+  rotation: 90deg;
 }

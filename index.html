@@ -3,19 +3,34 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Chaotic Creator &mdash; Left Menu with Header &amp; Footer</title>
-  <link rel="stylesheet" type="text/css" href="style.css" >
+  <link rel="stylesheet" type="text/css" href="temp.css" >
   <link href="https://fonts.googleapis.com/css?family=Caudex" rel="stylesheet">
   <script type="text/javascript">
   </script>
 </head>
 <body>
+  <div id="sidebar-fix"></div>
   <header id="header">
-    <div class="headerOne">
-      <img src="assets/chaotic-creator-logo.png" alt="logo" />
-      <h1>Chaotic Creator</h1>
+    <div class="chaoticClass">
+      <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
+      <h1 class="title">Chaotic Creator</h1>
     </div>
   </header>
-  <div id="wrapper">
+<div id="sidebar-toggle">
+  <input type="checkbox" />
+  <span></span>
+  <span></span>
+  <span></span>
+<div id="sidebar">
+  <ul>
+    <li><a href="index.html"><b>Main Page</b></a></li>
+    <li><a href="create.html"><b>Creation Page</b></a></li>
+    <li><a href="custom.html"><b>Custom Character</b></a></li>
+    <li><b>Your Characters</b></li>
+  </ul>
+</div>
+</div>
+<div class="wrapper">
     <main>
       <div id="content">
         <div class="introduction">
@@ -24,28 +39,10 @@
           <p>To get started just click the 'Link' below!</p>
           <div id="link">
           </div>
-          <div id="linkOne">
-            <a href="create.html">Click here to CREATE!</a>
-          </div>
         </div>
       </div>
     </main>
-    <nav id="nav">
-      <div class="chaoticClass">
-        <h3>Chaotic Menu</h3>
-        <ul>
-          <li><a href="create.html"><b>Click here to go to the Creation Page</b></a></li>
-          <li><a href="display.html"><b>Click here to Display your Character</b></a></li>
-          <li><a href="custom.html"><b>Click here to create a custom Character</b></a></li>
-        </ul>
-      </div>
-    </nav>
   </div>
-  <footer id="footer">
-    <div class="teamfooter">
-      <p>TEAM CHAOTIC</p>
-    </div>
-  </footer>
-
+<script src="app.js"></script>
 </body>
 </html>

@@ -1,44 +1,36 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
-      <title>Chaotic Creator</title>
-      <link href="custom.css" rel="stylesheet" style="text/css" />
-    </head>
-    <body>
-      <header>
-        <div id="header-wrapper">
-          <img src="assets/chaotic-creator-logo.png" id="logo" />
-          Chaotic Creator
-        </div>
-      </header>
-<<<<<<< HEAD
-=======
-      <div id="sidebar-toggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-      <div id="sidebar">
-        <ul>
-          <li><a href="index.html"><b>Main Page</b></a></li>
-          <li><a href="create.html"><b>Creation Page</b></a></li>
-          <li><a href="display.html"><b>Display Character</b></a></li>
-          <li><a href="custom.html"><b>Custom Character</b></a></li>
-        </ul>
-      </div>
-      </div>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
+  <title>Chaotic Creator</title>
+  <link href="temp.css" rel="stylesheet" style="text/css" />
+</head>
+<body>
+  <div id="sidebar-fix"></div>
+  <header id="header">
+    <div class="chaoticClass">
+      <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
+      <h1 class="title">
+        Chaotic Creator
+      </h1>
+    </div>
+  </header>
+  <div id="sidebar-toggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <div id="sidebar">
+      <ul>
+        <li><a href="index.html"><b>Main Page</b></a></li>
+        <li><a href="create.html"><b>Creation Page</b></a></li>
 
-      <h1 id="page-title">Create New Custom Character</h1>
->>>>>>> 58ad1392a53f5b3a99d8a21669cb3a24dde6ccf1
-      <div id="wrapper">
-<<<<<<< HEAD
-        <h1 id="page-title">Create New Custom Character</h1>
-        <div id="characterPicture">Character Picture
-          <input type="file" id="charPic" />
-        </div>
-=======
->>>>>>> ea5df6cb9e13eccc02a60384cc55ab0076709fba
+        <li><a href="custom.html"><b>Custom Character</b></a></li>
+        <li><b>Your Characters</b></li>
+      </ul>
+    </div>
+    </div>
+    <div class="wrapper">
 
         <div id="basicInfo">Basic Information
           <input type="text" placeholder="name" name="name" id="name" />
@@ -92,7 +84,6 @@
           <div id="height">
             <h3>Height</h3>
             <input type="number" placeholder="feet" id="feet" />
-
             <input type="number" placeholder="inches" id="inches" />
           </div>
         </div>
@@ -100,19 +91,6 @@
         <input type="number" placeholder="weight" id="weight" />
 
         <div id="rolls">Rolls
-<<<<<<< HEAD
-          <input type="number" min="0" max="30" placeholder="strength" class="rolls" />
-
-          <input type="number" min="0" max="30" placeholder="dexterity" class="rolls" />
-
-          <input type="number" min="0" max="30" placeholder="constitution" class="rolls" />
-
-          <input type="number" min="0" max="30" placeholder="intelligence" class="rolls" />
-
-          <input type="number" min="0" max="30" placeholder="wisdom" class="rolls" />
-
-          <input type="number" min="0" max="30" placeholder="charisma" class="rolls" />
-=======
           <input type="text" placeholder="strength" class="rolls" id="strength"/>
 
           <input type="text" placeholder="dexterity" class="rolls" id="dexterity"/>
@@ -124,7 +102,6 @@
           <input type="text" placeholder="wisdom" class="rolls" id="wisdom"/>
 
           <input type="text" placeholder="charisma" class="rolls" id="charisma" />
->>>>>>> 58ad1392a53f5b3a99d8a21669cb3a24dde6ccf1
         </div>
 
         <div id="charStory">Character Story
@@ -133,18 +110,8 @@
         <div id="charLooks">Looks
           <textarea id="looks"></textarea>
         </div>
-<<<<<<< HEAD
-        <input type="submit" />
-=======
         <button type="button" id="submit">Submit!</button>
->>>>>>> 58ad1392a53f5b3a99d8a21669cb3a24dde6ccf1
       </div>
-
-
-      <!-- returns user back to main index page -->
-      <h4><a href = "index.html" />Click here to return to Main Page</h4>
-
 <script src="custom.js"> </script>
-
     </body>
   </html>
