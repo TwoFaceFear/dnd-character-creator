@@ -3,10 +3,10 @@
 var character;
 var currentCharacter = [];
 var myCharacters = [];
-var slugbyte = new Character('slugbyte', 'human', 'male', 'wizard', 'chaoticGood');
-currentCharacter.push(slugbyte);
-localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
-localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
+// var slugbyte = new Character('slugbyte', 'human', 'male', 'wizard', 'chaoticGood');
+// currentCharacter.push(slugbyte);
+// localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
+// localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
 myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
 
@@ -261,6 +261,18 @@ function handleSubmitClick() {
   localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
   localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
   document.location.href = 'display.html';
+}
+
+for (var i = 0; i < myCharacters.length; i++){
+  var sidebar = document.getElementById('sidebar');
+  var aTag = document.createElement('a');
+  aTag.setAttribute('href','display.html');
+  aTag.setAttribute('name', 'click');
+  aTag.setAttribute('class', 'characters');
+  // aTag.setAttribute('style', 'padding: 20px')
+  aTag.setAttribute('id', i);
+  aTag.innerHTML = myCharacters[i].name;
+  sidebar.appendChild(aTag);
 }
 
 main();
