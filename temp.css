@@ -63,7 +63,7 @@ a, #sidebar ul li {
 }
 
 a:hover {
-  color: #FF530D;
+  color: #63605d;
 }
 
 .characters {
@@ -134,7 +134,7 @@ a:hover {
 #sidebar-toggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: white;
+  background: #e8e5e2;
 }
 
 /* But let's hide the middle one. */
@@ -208,6 +208,7 @@ a:hover {
   height: 100%;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 5%;
 }
 
 .chaoticClass h1 {
@@ -279,13 +280,35 @@ button {
 
 select {
   width: auto;
-  display: block;
+  display: inline-block;
 }
 
 input, textarea, select, button {
   border-radius: 5px;
 }
 
+.label-div {
+  text-align: left;
+  padding: 2px;
+}
+
+#delete {
+  margin: 0 auto;
+}
+
+.character-info{
+  width: 400px;
+  display: inline-block;
+}
+
+.character-ability{
+  width: 400px;
+  display: inline-block;
+}
+
+.display-img{
+  margin-top: 5%;
+}
 /*
 orange: rgb(255, 83, 13);
 hsla(17, 100%, 53%, 1);
