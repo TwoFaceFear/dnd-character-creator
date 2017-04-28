@@ -208,7 +208,7 @@ a:hover {
   height: 100%;
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
 .chaoticClass h1 {
@@ -336,6 +336,25 @@ top: 50%;
 transform: translate(-50%, -50%);
 max-width: 100%;
 margin-bottom: 200px;
+}
+
+.story-looks-div{
+  width: 960px;
+  margin-left: 30%;
+  display:inline-block;
+  margin-bottom: 3%;
+}
+
+.display-story{
+  display: inline-block;
+margin-left: 3%;
+width: 300px;
+}
+
+.display-looks{
+  display: inline-block;
+    margin-left: 7%;
+    width: 300px;
 }
 /*
 orange: rgb(255, 83, 13);

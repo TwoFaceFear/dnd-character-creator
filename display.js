@@ -54,6 +54,12 @@ function renderCharacter(char) {
 
   img = document.getElementById('display-img-race');
   img.src = 'assets/' + char.race + '.png';
+
+  el = document.getElementById('display-story');
+  el.innerHTML = el.innerHTML + char.story;
+
+  el = document.getElementById('display-looks');
+  el.innerHTML = el.innerHTML + char.looks;
 }
 
 function renderSkills() {
