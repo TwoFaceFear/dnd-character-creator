@@ -237,6 +237,35 @@ a:hover {
   transform: rotate(90deg);
 }
 
+.table1 {
+  width: 500px;
+  margin-left: 10px;
+}
+
+.table2 {
+  width: 400px;
+  float: right;
+  margin-top: -762px;
+  margin-right: 400px;
+}
+
+.table2 tbody {
+  float: left;
+  width: 500px;
+  margin-left: 60px;
+}
+
+.table1 tbody {
+  width: 400px;
+  margin-left: 400px;
+  float: left;
+}
+
+tr {
+  width: 300px;
+  color: black;
+}
+
 /*
 orange: rgb(255, 83, 13);
 hsla(17, 100%, 53%, 1);
