@@ -63,7 +63,7 @@ a, #sidebar ul li {
 }
 
 a:hover {
-  color: #FF530D;
+  color: #63605d;
 }
 
 .characters {
@@ -134,7 +134,7 @@ a:hover {
 #sidebar-toggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: white;
+  background: #e8e5e2;
 }
 
 /* But let's hide the middle one. */
@@ -208,6 +208,7 @@ a:hover {
   height: 100%;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 5%;
 }
 
 .chaoticClass h1 {
@@ -279,13 +280,63 @@ button {
 
 select {
   width: auto;
-  display: block;
+  display: inline-block;
 }
 
 input, textarea, select, button {
   border-radius: 5px;
 }
 
+.label-div {
+  text-align: left;
+  padding: 2px;
+}
+
+#delete {
+  margin: 0 auto;
+}
+
+.character-info{
+  width: 400px;
+  display: inline-block;
+}
+
+.character-ability{
+  width: 400px;
+  display: inline-block;
+}
+
+.display-img{
+  margin-top: 5%;
+}
+
+.us {
+  margin-left: 29%;
+  margin-top: 50px;
+}
+
+.me{
+position: relative;
+width: 200px;
+height: 200px;
+overflow: hidden;
+z-index: 1;
+margin: 0 auto;
+display: inline-block;
+border: solid black 3px;
+}
+
+.me img{
+left: 50%;
+position: absolute;
+top: 50%;
+-ms-transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
+-moz-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+max-width: 100%;
+margin-bottom: 200px;
+}
 /*
 orange: rgb(255, 83, 13);
 hsla(17, 100%, 53%, 1);
