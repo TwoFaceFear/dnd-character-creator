@@ -266,6 +266,21 @@ tr {
   color: black;
 }
 
+input {
+  width: auto;
+  display: block;
+}
+
+button {
+  width: auto;
+  display: block;
+}
+
+select {
+  width: auto;
+  display: block;
+}
+
 /*
 orange: rgb(255, 83, 13);
 hsla(17, 100%, 53%, 1);
