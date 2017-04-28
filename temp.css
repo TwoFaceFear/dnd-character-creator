@@ -208,6 +208,7 @@ a:hover {
   height: 100%;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 5%;
 }
 
 .chaoticClass h1 {
@@ -292,9 +293,22 @@ input, textarea, select, button {
 }
 
 #delete {
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
+.character-info{
+  width: 400px;
+  display: inline-block;
+}
+
+.character-ability{
+  width: 400px;
+  display: inline-block;
+}
+
+.display-img{
+  margin-top: 5%;
+}
 /*
 orange: rgb(255, 83, 13);
 hsla(17, 100%, 53%, 1);
