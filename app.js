@@ -149,6 +149,15 @@ function renderAttributesTable() {
       dwnDiv.addEventListener('click', handleDwnClick);
       rollDiv.appendChild(dwnDiv);
     }
+    if(i ===  6) {
+      var hr = document.createElement('hr');
+      hr.setAttribute('width', '50%');
+      hr.setAttribute('align', 'center');
+      attributesDiv.appendChild(hr);
+      var p = document.createElement('p');
+      p.textContent = 'Rolls below line will be discarded.';
+      attributesDiv.appendChild(p);
+    }
     attributesDiv.appendChild(rollDiv);
   }
   var sbmtDiv = document.createElement('div');
