@@ -19,11 +19,11 @@
 }
 
 /*#logo {
-  margin: 0;
-  height: 156px;
-  width: 187px;
-  display: block;
-  text-align: center;
+margin: 0;
+height: 156px;
+width: 187px;
+display: block;
+text-align: center;
 
 }*/
 
@@ -80,11 +80,11 @@ body {
 }
 
 /*.dropdown {
-  width: auto;
-  border: hsla(30, 2%, 18%, 1) solid 2px;
-  background-color: hsla(30, 11%, 90%, 1);
-  color: hsla(30, 2%, 18%, 1);
-  z-index: 1000000;
+width: auto;
+border: hsla(30, 2%, 18%, 1) solid 2px;
+background-color: hsla(30, 11%, 90%, 1);
+color: hsla(30, 2%, 18%, 1);
+z-index: 1000000;
 }*/
 
 #basicInfo {
