@@ -2,19 +2,11 @@
 
 var character;
 var currentCharacter = [];
-<<<<<<< HEAD
-var myCharacters;
-var slugbyte = new Character('slugbyte', 'human', 'male', 'wizard', 'chaoticGood');
-currentCharacter.push(slugbyte);
-localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
-localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
-=======
 var myCharacters = [];
 // var slugbyte = new Character('slugbyte', 'human', 'male', 'wizard', 'chaoticGood');
 // currentCharacter.push(slugbyte);
 // localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
 // localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
->>>>>>> 3ef36f3be3ff33f9a644aa4eb03d931ef304a5f8
 myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 currentCharacter = JSON.parse(localStorage.getItem('currentCharacter'));
 
@@ -259,7 +251,6 @@ function main() {
 
   if(submit) {
     submit.addEventListener('click', handleSubmitClick);
-  }
 
 }
 

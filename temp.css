@@ -328,3 +328,31 @@ hsla(30, 23%, 95%, 1);
 
 a comment
 */
+
+.us {
+  margin-left: 29%;
+  margin-top: 50px;
+}
+
+.me{
+position: relative;
+width: 200px;
+height: 200px;
+overflow: hidden;
+z-index: 1;
+margin: 0 auto;
+display: inline-block;
+border: solid black 3px;
+}
+
+.me img{
+left: 50%;
+position: absolute;
+top: 50%;
+-ms-transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
+-moz-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+max-width: 100%;
+margin-bottom: 200px;
+}
