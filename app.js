@@ -6,7 +6,7 @@ var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
 if (myCharacters === null){
   myCharacters = [];
 }
-var currentCharacter = [];
+//var currentCharacter = [];
 function Character(name, race, gender, charClass, align) {
   this.name = name;
   this.race = race;
