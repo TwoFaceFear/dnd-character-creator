@@ -185,6 +185,7 @@ a:hover {
     background-color: #63605d;
     display: inline;
     margin: 0;
+    border-radius: 5px;
   }
 
   #sidebar ul li.nth-child(2){
@@ -279,6 +280,10 @@ button {
 select {
   width: auto;
   display: block;
+}
+
+input, textarea, select, button {
+  border-radius: 5px;
 }
 
 /*

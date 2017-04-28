@@ -81,7 +81,7 @@ function rollDice(numRolls) {
   return rolls;
 }
 function onlyLetters(nameInput) {
-  //below is a regular expression that represents all upper and lower case letters
+  //regular expression for all upper and lower case letters and spaces
   var alpha = /^[A-Za-z \s]+$/;
   if(nameInput.match(alpha))
   {
