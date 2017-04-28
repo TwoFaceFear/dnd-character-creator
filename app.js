@@ -81,7 +81,7 @@ function rollDice(numRolls) {
   return rolls;
 }
 function onlyLetters(nameInput) {
-  //below is a regular expression that represents all upper and lower case letters
+  //regular expression for all upper and lower case letters and spaces
   var alpha = /^[A-Za-z \s]+$/;
   if(nameInput.match(alpha))
   {
@@ -148,6 +148,15 @@ function renderAttributesTable() {
       dwnDiv.innerHTML = '<img class="down-arrow" src="assets/arrow22.png" alt="Down"/>';
       dwnDiv.addEventListener('click', handleDwnClick);
       rollDiv.appendChild(dwnDiv);
+    }
+    if(i ===  6) {
+      var hr = document.createElement('hr');
+      hr.setAttribute('width', '50%');
+      hr.setAttribute('align', 'center');
+      attributesDiv.appendChild(hr);
+      var p = document.createElement('p');
+      p.textContent = 'Rolls below line will be discarded.';
+      attributesDiv.appendChild(p);
     }
     attributesDiv.appendChild(rollDiv);
   }

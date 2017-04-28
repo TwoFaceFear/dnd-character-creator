@@ -185,6 +185,7 @@ a:hover {
     background-color: #63605d;
     display: inline;
     margin: 0;
+    border-radius: 5px;
   }
 
   #sidebar ul li.nth-child(2){
@@ -264,6 +265,25 @@ a:hover {
 tr {
   width: 300px;
   color: black;
+}
+
+input {
+  width: auto;
+  display: block;
+}
+
+button {
+  width: auto;
+  display: block;
+}
+
+select {
+  width: auto;
+  display: block;
+}
+
+input, textarea, select, button {
+  border-radius: 5px;
 }
 
 /*
