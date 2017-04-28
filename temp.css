@@ -63,7 +63,7 @@ a, #sidebar ul li {
 }
 
 a:hover {
-  color: #FF530D;
+  color: #63605d;
 }
 
 .characters {
@@ -134,7 +134,7 @@ a:hover {
 #sidebar-toggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: white;
+  background: #e8e5e2;
 }
 
 /* But let's hide the middle one. */
@@ -279,11 +279,20 @@ button {
 
 select {
   width: auto;
-  display: block;
+  display: inline-block;
 }
 
 input, textarea, select, button {
   border-radius: 5px;
+}
+
+.label-div {
+  text-align: left;
+  padding: 2px;
+}
+
+#delete {
+  margin: 0 auto; 
 }
 
 /*
