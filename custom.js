@@ -2,7 +2,7 @@
 
 var character;
 var currentCharacter = [];
-var myCharacters = [];
+var myCharacters;
 var slugbyte = new Character('slugbyte', 'human', 'male', 'wizard', 'chaoticGood');
 currentCharacter.push(slugbyte);
 localStorage.setItem('myCharacters', JSON.stringify(myCharacters));
