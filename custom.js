@@ -269,10 +269,26 @@ for (var i = 0; i < myCharacters.length; i++){
   aTag.setAttribute('href','display.html');
   aTag.setAttribute('name', 'click');
   aTag.setAttribute('class', 'characters');
-  // aTag.setAttribute('style', 'padding: 20px')
   aTag.setAttribute('id', i);
   aTag.innerHTML = myCharacters[i].name;
   sidebar.appendChild(aTag);
+}
+
+var aTags = [];
+function eventAdder (){
+  aTags = document.getElementsByName('click');
+  for (var i=0;i<aTags.length;i++){
+    var a = aTags[i];
+    a.addEventListener('click', handleSubmitClickSideBar);
+  }
+}
+eventAdder();
+
+function handleSubmitClickSideBar(event) {
+  // event.preventDefault();
+  var currentTarget = event.target.id;
+  currentCharacter = myCharacters[currentTarget];
+  localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
 }
 
 main();
