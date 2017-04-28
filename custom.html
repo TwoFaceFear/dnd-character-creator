@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
-      <title>Chaotic Creator</title>
-      <link href="temp.css" rel="stylesheet" style="text/css" />
-    </head>
-    <body>
-      <div id="sidebar-fix"></div>
-      <header id="header">
-        <div class="chaoticClass">
-          <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
-          <h1 class="title">Chaotic Creator</h1>
-        </div>
-      </header>
-    <div id="sidebar-toggle">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Aclonica|Caudex|Overpass" rel="stylesheet" />
+  <title>Chaotic Creator</title>
+  <link href="temp.css" rel="stylesheet" style="text/css" />
+</head>
+<body>
+  <div id="sidebar-fix"></div>
+  <header id="header">
+    <div class="chaoticClass">
+      <img src="assets/chaotic-creator-logo.png" alt="logo" class="logo" />
+      <h1 class="title">
+        Chaotic Creator
+      </h1>
+    </div>
+  </header>
+  <div id="sidebar-toggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
     <div id="sidebar">
       <ul>
         <li><a href="index.html"><b>Main Page</b></a></li>
@@ -111,12 +113,25 @@
         <button type="button" id="submit">Submit!</button>
 
 
+      <input type="text" placeholder="intelligence" class="rolls" id="intelligence" />
+
+      <input type="text" placeholder="wisdom" class="rolls" id="wisdom"/>
+
+      <input type="text" placeholder="charisma" class="rolls" id="charisma" />
+    </div>
+
+    <div id="charStory">Character Story
+      <textarea id="characterStory"></textarea>
+    </div>
+    <div id="charLooks">Looks
+      <textarea id="looks"></textarea>
+    </div>
     <button type="button" id="submit">Submit!</button>
   </div>
-
   <!-- returns user back to main index page -->
   <h4><a href = "index.html" />Click here to return to Main Page</h4>
 
 <script src="custom.js"> </script>
     </body>
   </html>
+

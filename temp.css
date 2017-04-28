@@ -21,7 +21,7 @@ header {
   height: 200px;
   /*text-align: center;*/
   color: #FF530D;
-  font: 'Caudex', sans-serif;
+  font-family: 'Caudex', sans-serif;
 }
 
 .title {
@@ -34,7 +34,7 @@ header {
 
 .logo {
   margin-top: 20px;
-  margin-left: 600px;
+  margin-left: 50px;
   margin-right: -600px;
   float: left;
   height: 156px;
