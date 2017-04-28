@@ -134,7 +134,7 @@ a:hover {
 #sidebar-toggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #FF530D;
+  background: white;
 }
 
 /* But let's hide the middle one. */
@@ -156,7 +156,7 @@ a:hover {
     margin: -136px 0 0 42px;
     padding-top: 125px;
     height: 1200px;
-    background: #63605d;
+    background: #FF530D;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
@@ -182,7 +182,7 @@ a:hover {
     position: fixed;
     height: 1000px;
     width: 52px;
-    background-color: #63605d;
+    background-color: #FF530D;
     display: inline;
     margin: 0;
     border-radius: 5px;
