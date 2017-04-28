@@ -239,27 +239,20 @@ a:hover {
 }
 
 .table1 {
-  width: 500px;
-  margin-left: 10px;
+  width: 400px;
+  display: inline-flex;
+  margin-left: 17%;
 }
 
 .table2 {
   width: 400px;
-  float: right;
-  margin-top: -762px;
-  margin-right: 400px;
+  display: inline-flex;
+  margin-left: 5%;
 }
 
-.table2 tbody {
-  float: left;
-  width: 500px;
-  margin-left: 60px;
-}
-
-.table1 tbody {
-  width: 400px;
-  margin-left: 400px;
-  float: left;
+#skill-div{
+  width: 960px;
+  margin: 0 auto;
 }
 
 tr {
