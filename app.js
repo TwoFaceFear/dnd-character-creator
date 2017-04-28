@@ -1,5 +1,6 @@
 'use strict';
 var character;
+var currentCharacter = [];
 var timesToRoll; //sets the number of rolls
 var rolls = [];
 var myCharacters = JSON.parse(localStorage.getItem('myCharacters'));
@@ -280,4 +281,22 @@ for (var i = 0; i < myCharacters.length; i++){
   aTag.innerHTML = myCharacters[i].name;
   sidebar.appendChild(aTag);
 }
+
+var aTags = [];
+function eventAdder (){
+  aTags = document.getElementsByName('click');
+  for (var i=0;i<aTags.length;i++){
+    var a = aTags[i];
+    a.addEventListener('click', handleSubmitClickSideBar);
+  }
+}
+eventAdder();
+
+function handleSubmitClickSideBar(event) {
+  // event.preventDefault();
+  var currentTarget = event.target.id;
+  currentCharacter = myCharacters[currentTarget];
+  localStorage.setItem('currentCharacter', JSON.stringify(currentCharacter));
+}
+
 main();
