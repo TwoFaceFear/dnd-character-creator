@@ -118,7 +118,7 @@ a:hover {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
 }
 
 #sidebar-toggle span:first-child {
@@ -185,6 +185,7 @@ a:hover {
     background-color: #63605d;
     display: inline;
     margin: 0;
+    border-radius: 5px;
   }
 
   #sidebar ul li.nth-child(2){
@@ -257,6 +258,25 @@ a:hover {
 tr {
   width: 300px;
   color: black;
+}
+
+input {
+  width: auto;
+  display: block;
+}
+
+button {
+  width: auto;
+  display: block;
+}
+
+select {
+  width: auto;
+  display: block;
+}
+
+input, textarea, select, button {
+  border-radius: 5px;
 }
 
 /*
